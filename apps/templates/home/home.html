@@ -1,9 +1,16 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={% static 'css/home.css' %}>
+{% endblock stylesheets %}
+
 {% block content %}
 
-<div>
-    <ul></ul>
-</div>
+    <div>
+        <ul>Inicio</ul>
+        <ul>Perfil</ul>
+    </div>
 
 {% endblock content %}
