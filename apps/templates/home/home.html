@@ -1,16 +1,48 @@
-{% extends 'layouts/base.html' %}
 
 {% load static %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href={% static 'css/home.css' %}>
-{% endblock stylesheets %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block content %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href={% static 'css/home.css' %}>
+    {% endblock stylesheets %}
 
-    <div>
-        <ul>Inicio</ul>
-        <ul>Perfil</ul>
-    </div>
+    {% block cdn %}
+        
+        {% comment "Google Fonts" %}{% endcomment %} 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+        {% comment "Google Fonts" %}{% endcomment %}
+        
+    {% endblock cdn %}
 
-{% endblock content %}
+    <title>{% block title %}HOME{% endblock title %}</title>
+</head>
+<body>
+    
+    {% block content %}
+
+        <div class="menu__container">
+            <ul class="menu__container-item"><a href="">General</a></ul>
+            <ul class="menu__container-item"><a href="">Perfil</a></ul>
+            <ul class="menu__container-item"><a href="">Configuración</a></ul>
+            <ul class="menu__container-item"><a href="">Cerrar Sesion </a></ul>
+        </div>
+
+        <div class="navegadores__container">
+            <p class="navegadores__container-item"><a href="">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a></p>
+            <p class="navegadores__container-item"><a href="">PODER JUDICIAL MICHOACAN</a></p>
+            <p class="navegadores__container-item"><a href="">TRIBUNALES AGRARIOS MEXICO</a></p>
+        </div>
+
+    {% endblock content %}
+
+
+</body>
+</html>

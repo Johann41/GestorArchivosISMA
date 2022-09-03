@@ -1,3 +1,37 @@
-ul{
-    background-color: red;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.navegadores__container{
+    margin-top: 10%;
+}
+
+.navegadores__container-item{
+    border: 1px solid #ff0000;
+    display: inline;
+    align-items: center;
+    block-size: 150px;
+    writing-mode: horizontal-tb;   
+}
+
+.navegadores__container p{
+    writing-mode: vertical-tb;
+    background-color: rgb(55, 212, 27);
+    block-size: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navegadores__container-item a{
+    border: 1px solid blue;
+    writing-mode: vertical-tb;
+    background-color: yellow;
+    align-items: center;
+    justify-content: center;
+    block-size: 200px; 
 }
