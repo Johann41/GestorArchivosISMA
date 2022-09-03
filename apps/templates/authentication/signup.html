@@ -1,0 +1,52 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<body class="login_other login_signup">
+    <div>
+        <form class="form" method="post">
+
+            <h1 class="form__header signup__header">SIGN UP</h1>
+
+            <div class="form__container signup__container">
+
+                <p class="p-signup">Please fill this form to create an account</p>
+
+                <label class="form__label" for="username">Name(s)</label>
+                <input class="form__input" type="text" placeholder="" required>
+
+                <label class="form__label" for="lastname">Last Name</label>
+                <input class="form__input" type="text" placeholder="" required>
+
+                <label class="form__label" for="username">Username</label>
+                <input class="form__input" type="text" placeholder="" required>
+
+                <label class="form__label" for="email">Email</label>
+                <input class="form__input" type="text" placeholder="" required>
+
+                <label class="form__label" for="password">Password</label>
+                <input class="form__input" type="password" placeholder="" required>
+
+                <label class="form__label" for="password">Confirm Password</label>
+                <input class="form__input" type="password" placeholder="" required>
+
+
+                <div class="button__container">
+                    <button class="button__item" type="submit">Sign up</button>
+                </div>
+
+                <div class="links links--signup">  
+                    <span>Return to <a href="login.html">Login</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </span><br>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+{% endblock content %}
