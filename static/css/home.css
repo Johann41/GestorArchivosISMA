@@ -18,20 +18,37 @@
     writing-mode: horizontal-tb;   
 }
 
+.menu__container ul {
+    background-color: white;
+    border: .5px solid black;
+}
+
 .navegadores__container p{
     writing-mode: vertical-tb;
     background-color: rgb(55, 212, 27);
     block-size: 200px; 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+body{
+    background-color: rgb(8, 94, 27);
+}
+
+.navegadores__container{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .navegadores__container-item a{
+    position: static;
+    font-size: 1.5em;
     border: 1px solid blue;
-    writing-mode: vertical-tb;
     background-color: yellow;
-    align-items: center;
-    justify-content: center;
-    block-size: 200px; 
+    display: flex;
+    text-align: center;
+    box-sizing: content-box;
+    width: 60%;
 }
