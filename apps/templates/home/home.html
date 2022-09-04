@@ -18,6 +18,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
         {% comment "Google Fonts" %}{% endcomment %}
         
     {% endblock cdn %}
@@ -28,26 +32,30 @@
     
     {% block content %}
 
-        <div class="menu__container">
-            <ul class="menu__container-item"><a href="">General</a></ul>
-            <ul class="menu__container-item"><a href="">Perfil</a></ul>
-            <ul class="menu__container-item"><a href="">Configuración</a></ul>
-            <ul class="menu__container-item"><a href="">Cerrar Sesion </a></ul>
+        <div class="block__menu">
+            <ul><a href="">General</a></ul>
+            <ul><a href="">Perfil</a></ul>
+            <ul><a href="">Configuración</a></ul>
+            <ul><a href="">Cerrar Sesion </a></ul>
         </div>
 
-        <div class="navegadores__container">
+        <div class="block__navegador">
 
-            <p class="navegadores__container-item">
+            <p class="block__navegador--color1">
+                <img class="block__navegador--imagen1" src="{% static 'images/logo_TJAM.png' %}" alt="">
                 <a href="">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
             </p>
 
-            <p class="navegadores__container-item">
+            <p class="block__navegador--color2">
+                <img class="block__navegador--imagen2" src="{% static 'images/logo_stjem.png' %}" alt="">
                 <a href="">PODER JUDICIAL MICHOACAN</a>
             </p>
 
-            <p class="navegadores__container-item">
-                <a href="">TRIBUNALES AGRARIOS MEXICO</a>
+            <p class="block__navegador--color3">
+                <img class="block__navegador--imagen3" src="{% static 'images/logo_agrarios.png' %}" alt="">
+                <a href="">PODER JUDICIAL MICHOACAN</a>
             </p>
+
         </div>
 
     {% endblock content %}
