@@ -32,30 +32,42 @@
     
     {% block content %}
 
-        <div class="block__menu">
-            <ul><a href="">General</a></ul>
-            <ul><a href="">Perfil</a></ul>
-            <ul><a href="">Configuración</a></ul>
-            <ul><a href="">Cerrar Sesion </a></ul>
+        <div class="navbar">
+            
+            <div class="navbar__input">
+                <input  type="text"
+                 placeholder="BUSQUEDA POR NO. DE EXP"
+                >
+                <button>
+                    <label for="">BUSCAR</label>
+                </button>
+            </div>
+            
+            <ul class="navbar__list">
+                <li class="navbar__list-item"><a href="#">General</a></li>
+                <li class="navbar__list-item"><a href="#">Perfil</a></li>
+                <li class="navbar__list-item"><a href="#">Configuración</a></li>
+                <li class="navbar__list-item"><a href="{% url 'auth_login' %}">Cerrar Sesion </a></li>
+            </ul>
         </div>
 
         <div class="block__navegador">
 
             <p class="block__navegador--color1">
-                <img class="block__navegador--imagen1" src="{% static 'images/logo_TJAM.png' %}" alt="">
-                <a href="">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
+                <img class="" src="{% static 'images/logo_TJAM.png' %}" alt="">
+                <a href="{% url 'TJAM' %}">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
             </p>
 
             <p class="block__navegador--color2">
-                <img class="block__navegador--imagen2" src="{% static 'images/logo_stjem.png' %}" alt="">
-                <a href="">PODER JUDICIAL MICHOACAN</a>
+                <img class="" src="{% static 'images/logo_stjem.png' %}" alt="">
+                <a href="{% url 'STEJEM' %}">PODER JUDICIAL MICHOACAN</a>
             </p>
 
             <p class="block__navegador--color3">
-                <img class="block__navegador--imagen3" src="{% static 'images/logo_agrarios.png' %}" alt="">
-                <a href="">PODER JUDICIAL MICHOACAN</a>
+                <img class="" src="{% static 'images/logo_agrarios_1.png' %}" alt="">
+                <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
             </p>
-
+            
         </div>
 
     {% endblock content %}
