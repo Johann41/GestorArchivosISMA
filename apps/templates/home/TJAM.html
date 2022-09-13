@@ -3,7 +3,71 @@
 {% load static %}
 
 {% block content %}
-    <main>
-        <h1>TJAM</h1>
-    </main>
+   <body>
+        
+        <div class="contenedor__nav__tribunales">
+                
+            <div class="nav__button">
+                <label for="">Por instancia
+                    <input type="radio">  
+                </label>
+                    
+        
+                <label for="">Por expediente
+                    <input type="radio">
+                </label>
+                    
+            </div>
+    
+            <form class="formTJAM">
+
+                <h5>BUSQUEDA POR INSTANCIA</h5>
+                <p>Elija las opciones sobre su expediente</p>
+
+                <div class="formTJAM__input">
+
+                    <label for="">Instancia
+                        <select name="" id="">
+                            <option value="0">- Elige la instancia -</option>
+                            <option value="1">JUZGADO</option>
+                            <option value="2">SALAS ADMINISTRATIVAS</option>
+                            <option value="3">AMPARO</option>
+                        </select>
+                    </label>
+
+                    <label for="">Numero
+                        <select name="" id="- Elige el num -">
+                            <option value="0">- Elige el num -</option>
+                            <option value="1">PRIMERO</option>
+                            <option value="2">SEGUNDO</option>
+                            <option value="3">TERCERO</option>
+                            <option value="4">URUAPAN</option>
+                        </select>
+                    </label>
+
+                    <label for="">Tipo
+                        <select name="" id="">
+                            <option value="0">- Elige el tipo -</option>
+                            <option value="1">JA</option>
+                            <option value="2">JAR</option>
+                            <option value="3">JAL</option>                            
+                        </select>
+                    </label>
+                    
+                    <label for="">
+                        Expediente: 
+                        <input type="text" 
+                        placeholder="(num de expediente)">
+                    </label>
+
+                    <label for="">
+                        Año: 
+                        <input type="text" 
+                        placeholder="YYYY">
+                    </label>
+                </div>
+            </form>
+
+        </div>
+   </body>
 {% endblock content %}

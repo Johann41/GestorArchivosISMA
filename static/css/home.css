@@ -1,7 +1,7 @@
 :root{
     --color-fondo : #1f333e;
     --colo-letra-hover: #B1B1B1;
-    --color-nav-1 :#2887DF;
+    --color-nav-1 :#AA3056;
     --color-nav-2 :#29678A;
     --color-nav-3 :#8F2424;
 }
@@ -12,7 +12,7 @@
     padding: 0;
     font-size: 25px;
     font-family: 'Mukta', sans-serif;
-}
+} 
 
 body{
     background-color: var(--color-fondo);
@@ -30,13 +30,13 @@ body{
     gap: 20px;
 }
 
-.navbar__input{
+.navbar__search{
     margin: 5px 2.5em 0 0;
     display: flex;
     gap: 10px;
 }
 
-.navbar__input >input{
+.navbar__input{
     width: 40vw;
 }
 
@@ -95,6 +95,7 @@ img{
 
 p > a:link,  p >a:visited{
     color: black;
+    text-decoration: none;
 }
 
 p > a:hover{
@@ -105,6 +106,15 @@ p > a:hover{
 .navbar__list-item > a:hover{
     color: var(--colo-letra-hover);
     font-weight: bold;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
+/* NAVEGADORES */
+
+.contenedor__nav__tribunales{
+    padding: 15px;
+    margin: 2em;
+    background-color: white;
+}
+
+/* NAVEGADORES */

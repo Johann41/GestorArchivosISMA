@@ -1,56 +1,9 @@
+{% extends 'layouts/base.html' %}
 
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% block stylesheets %}
-        <link rel="stylesheet" href={% static 'css/home.css' %}>
-    {% endblock stylesheets %}
-
-    {% block cdn %}
-        
-        {% comment "Google Fonts" %}{% endcomment %} 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
-        {% comment "Google Fonts" %}{% endcomment %}
-        
-    {% endblock cdn %}
-
-    <title>{% block title %}HOME{% endblock title %}</title>
-</head>
-<body>
-    
-    {% block content %}
-
-        <div class="navbar">
-            
-            <div class="navbar__input">
-                <input  type="text"
-                 placeholder="BUSQUEDA POR NO. DE EXP"
-                >
-                <button>
-                    <label for="">BUSCAR</label>
-                </button>
-            </div>
-            
-            <ul class="navbar__list">
-                <li class="navbar__list-item"><a href="#">General</a></li>
-                <li class="navbar__list-item"><a href="#">Perfil</a></li>
-                <li class="navbar__list-item"><a href="#">Configuración</a></li>
-                <li class="navbar__list-item"><a href="{% url 'auth_login' %}">Cerrar Sesion </a></li>
-            </ul>
-        </div>
-
+{% block content %}
+    <body>
         <div class="block__navegador">
 
             <p class="block__navegador--color1">
@@ -69,9 +22,7 @@
             </p>
             
         </div>
+    </body>
 
-    {% endblock content %}
+{% endblock content %}
 
-
-</body>
-</html>
