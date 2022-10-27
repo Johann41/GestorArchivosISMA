@@ -22,13 +22,15 @@ body{
 }
 
 header{
-    background-color: var(--color-navbar);
-    height: 13vh;
+    height: 5em;
     width: 100v;
 }
 
 .navbar__information{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    gap: 30px;
     width: 80vw;
 }
 
@@ -49,7 +51,10 @@ header{
 }    
 
 .navbar__list{
+    background-color: #948A8D;
+    height: 1.8em;
     display: flex;
+    align-items: baseline;
     justify-content: space-evenly;
 }
 
@@ -77,7 +82,7 @@ header{
 .block__navegador p{  
     font-size: 1.2em; 
     width: 34vh;
-    height: 70vh;
+    height: 60vh;
     margin-top: 3em;
     display: flex;
     flex-direction: column;
@@ -88,7 +93,7 @@ header{
 
 .block__navegador p a{    
     margin-top: 2em;
-    font-size: 35px;
+    font-size: .9em;
     font-family: 'Secular One', sans-serif;
 }
 

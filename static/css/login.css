@@ -5,14 +5,14 @@
 }
 
 .login{
-    background-image: url('https://www.solucionagestion.es/wp-content/uploads/2015/01/hd-attorney-law-firm-wallpaper-1080p.jpg');
+    background-image: url('');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .login_other{
-    background-image: url('https://cotsvalencia.com/wp-content/uploads/2022/07/court-hammer-and-books-judgment-and-law-concept-scaled-2560x1280.jpg');
+    background-image: url('C:\Users\Johann Israel\Documents\Proyectos_Django\GestorArchivosISMA\static\images\fondoLogin1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -65,7 +65,7 @@ body{
 
 .form__container {
     width: 28%;  
-    height: 430px;
+    height: 100vh;
     margin: auto;  
     padding: 20px;
     background-color: #E3EEFE;
