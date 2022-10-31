@@ -65,7 +65,7 @@ body{
 
 .form__container {
     width: 28%;  
-    height: 50vh;
+    height: 55vh;
     margin: auto;  
     padding: 20px;
     background-color: #E3EEFE;
@@ -79,7 +79,7 @@ body{
 }
 
 .signup__container{
-    height: 80vh;
+    height: 85vh;
 }
 
 .password__container{
