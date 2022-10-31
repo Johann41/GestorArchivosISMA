@@ -12,8 +12,16 @@
         <link rel="stylesheet" href={% static 'css/TJAM.css' %}>
     {% endblock stylesheets %}
 
-    {% block cdn %}
-        
+    {% block iconBootstrap %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    {% endblock iconBootstrap %}
+
+    {% block icon_page %}
+        <link rel="icon" href="{% static 'images/home/logo_imalogo.png' %}">
+    {% endblock icon_page %}
+
+
+    {% block cdn %}  
         {% comment "Google Fonts" %}{% endcomment %} 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +29,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
-        {% comment "Google Fonts" %}{% endcomment %}
-        
+        {% comment "Google Fonts" %}{% endcomment %}   
     {% endblock cdn %}
 
     <title>{% block title %}Home{% endblock title %}</title>

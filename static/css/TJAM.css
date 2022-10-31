@@ -13,7 +13,7 @@
 .formTJAM__input{   
     display: flex;
     gap: 30px;
-    flex-grow: 1;
+    flex-grow: 3;
     justify-content: space-between;
     border: 1px solid black;  
     margin-top: 2em;

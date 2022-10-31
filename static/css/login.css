@@ -5,14 +5,14 @@
 }
 
 .login{
-    background-image: url('jm ');
+    background-image: url('../images/login/fondo_login.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .login_other{
-    background-image: url('https://cotsvalencia.com/wp-content/uploads/2022/07/court-hammer-and-books-judgment-and-law-concept-scaled-2560x1280.jpg');
+    background-image: url('../images/login/fondoLogin1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -20,7 +20,7 @@
 
 
 .login_signup{
-    font-size: 16px;
+    font-size: 1em;
 }
 
 body{
@@ -65,7 +65,7 @@ body{
 
 .form__container {
     width: 28%;  
-    height: 430px;
+    height: 50vh;
     margin: auto;  
     padding: 20px;
     background-color: #E3EEFE;
@@ -75,11 +75,11 @@ body{
 
 .p-signup{
     text-align: center;
-    margin: 15px;
+    margin: 1em;
 }
 
 .signup__container{
-    height: 630px;
+    height: 80vh;
 }
 
 .password__container{
@@ -97,7 +97,7 @@ body{
 }
 
 .button__item{
-    margin: 20px 0; 
+    margin: 30px 0; 
     font-size: 1rem;
     width: 95%;
     height: 3em;
