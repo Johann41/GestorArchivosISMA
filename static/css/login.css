@@ -1,3 +1,7 @@
+:root{
+    --color-font--header: rgb(233, 158, 59);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -31,12 +35,9 @@ body{
 }
 
 .form__header {
-    margin: 1.5em 0;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    color: aliceblue;
-    text-shadow: 2px 2px 10px black;
+    font-weight: bolder;
+    color: var(--color-font--header);
+    /* text-shadow: 2px 2px 10px black; */
 }  
 
 .signup__header{
@@ -73,6 +74,30 @@ body{
     opacity: 85%;
 }
 
+.content__header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3.8em;  
+}
+
+.container__header--links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    gap: 30px;
+}
+
+.block__container--login{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 70%;
+    padding: 2%;
+    margin-top: 10%;  
+    height: 60vh; 
+}
+
 .p-signup{
     text-align: center;
     margin: 1em;
@@ -95,6 +120,7 @@ body{
     font-size: 18px;
     margin-bottom: 30px;
 }
+
 
 .button__item{
     margin: 30px 0; 
