@@ -4,20 +4,20 @@
 
 {% block content %}
     <body>
-        <div class="block__navegador">
+        <div class="navegador">
 
-            <p class="block__navegador--color1">
-                <img class="" src="{% static 'images/logo_TJAM.png' %}" alt="">
+            <p class="block__navegador block__navegador--color1">
+                <img class="block__navegador__imagen" src="{% static 'images/home/logo_TJAM.png' %}" alt="">
                 <a href="{% url 'TJAM' %}">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
             </p>
 
-            <p class="block__navegador--color2">
-                <img class="" src="{% static 'images/logo_stjem.png' %}" alt="">
+            <p class="block__navegador block__navegador--color2">
+                <img class="block__navegador__imagen" src="{% static 'images/home/logo_stjem.png' %}" alt="">
                 <a href="{% url 'STEJEM' %}">PODER JUDICIAL MICHOACAN</a>
             </p>
 
-            <p class="block__navegador--color3">
-                <img class="" src="{% static 'images/logo_agrarios_1.png' %}" alt="">
+            <p class="block__navegador block block__navegador--color3">
+                <img class="block__navegador__imagen" src="{% static 'images/home/logo_agrarios_1.png' %}" alt="">
                 <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
             </p>
             

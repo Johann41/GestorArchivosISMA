@@ -1,27 +1,41 @@
 {% load static %}
 
 <header>
-    <div class="navbar">  
+    <div class="navbar">   
         
-        <div>
-            <img src="{% static 'images/logo_imalogo.png' %}" alt="" class="navbar__logo">
-        </div>
+        <div class="navbar__logo">
+            <img class="" src="{% static 'images/logo_final-sinFondo.png' %}" alt="">
+        </div> 
 
-        <div class="navbar__information">            
-            <ul class="navbar__list">
-                <li class="navbar__list-item"><a href="{% url 'home' %}">General</a></li>
-                <li class="navbar__list-item"><a href="#"></a></li>  
-                <li class="navbar__list-item"><a href="#">Configuración</a></li>
-                <li class="navbar__list-item"><a href="{% url 'auth_login' %}">Cerrar Sesion </a></li>
-            </ul>
-            <div class="navbar__search">
+        <div class="navbar__information">
+            <div class="">
+                <ul class="navbar__list">
+                    <li class="navbar__list-texto"><a href="{% url 'home' %}">
+                        Home
+                        {% comment %} <i class="bi bi-house-door-fill"></i> {% endcomment %}
+                    </a></li>
+                    <li class="navbar__list-texto"><a href="#">
+                        Configuración
+                        {% comment %} <i class="bi bi-gear"></i> {% endcomment %}
+                    </a></li>
+                    <li class="navbar__list-texto"><a href="#">                       
+                        Ayuda                        
+                    </a></li>  
+                    <li class="navbar__list-texto"><a href="#">
+                        <i class="bi bi-person-circle"></i>
+                        Perfil                        
+                    </a></li>                  
+                    <li class="navbar__list-texto"><a href="{% url 'auth_login' %}">
+                        Cerrar Sesion 
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </a></li>
+                </ul>
+            </div> 
+                <div class="navbar__search">
                 <input class="navbar__input" type="text"
-                 placeholder="BUSQUEDA POR NUM DE EXP"
+                placeholder="BUSQUEDA POR NUM DE EXP"
                 >
                 <input class="" type="submit" value="BUSCAR">
-            </div>
-        </div>
-
-        
+        </div>   
     </div>
 </header>
