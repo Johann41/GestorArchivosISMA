@@ -65,7 +65,7 @@ body{
     margin: 30px 0; 
     font-size: 1rem;
     width: 95%;
-    height: ;
+    min-height: 40px;
     background-color: var(--color-bottom);
     color: var(--color-font);
     font-weight: bold;
@@ -185,6 +185,10 @@ body{
         background-color: var(--color-fom-container);
     }
     
+    .button__item{
+        min-height: 40px;
+    }
+
     .right-form{
         width: 100%;
     }

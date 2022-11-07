@@ -62,8 +62,7 @@ body{
 
 .navbar__list-texto{ 
     display: flex;
-    list-style-type: none;
-    font-size: 2.1em;   
+    list-style-type: none;    
 }
 
 .navbar__list-texto > a{
@@ -93,7 +92,7 @@ body{
     border-radius: 3%;
     font-size: 1.7em; 
     width: 20%;
-    height: 65vh;  
+    height: 60vh;   
 } 
 
 .block__navegador > a{    
