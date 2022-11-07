@@ -5,39 +5,41 @@
 {% block content %}
 
 <body class="login">
-    <div class="form__container block__container--login">
+    <div class="form__container">
         <section class="left-form">           
-            <img src="{% static 'images/logo_final-sinFondo.png' %}" alt="">          
+            <img class="left-form__logo" src="{% static 'images/logo_final-letras_negras.png' %}" alt="">          
         </section>
 
         <section class="right-form">
             <form  method="post" action="">
-                
-                <h1 class="form__header--login">Inicio de Sesion</h1>
-                    
-                <div class="container__header--links">
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-google"></i></a>
+
+                <div class="form-header">
+                    <h1 class="form-header__titulo">Inicio de Sesion</h1>
+                    <div class="container-link">
+                        <a href="" class="container-link__item"><i class="bi bi-facebook"></i></a>
+                        <a href=""class="container-link__item"><i class="bi bi-google"></i></a> 
+                    </div>                   
                 </div>
+        
+                <div class="form-input">
+                    <label class="form__label" for="username">
+                        <i class="bi bi-person-fill"></i>
+                        Usuario</label>
+                    <input class="form__input" type="text" placeholder="Enter username" required>
+    
+                    <label class="form__label" for="password">
+                        <i class="bi bi-lock-fill"></i>
+                        Contraseña</label>
+                    <input class="form__input" type="password" placeholder="Enter password" required>                       
+                </div>
+               
+                    <button class="button__item" type="submit">Iniciar Sesion</button>
 
-                <label class="form__label" for="username">
-                    <i class="bi bi-person-fill"></i>
-                    Usuario</label>
-                <input class="form__input" type="text" placeholder="Enter username" required>
-
-                <label class="form__label" for="password">
-                    <i class="bi bi-lock-fill"></i>
-                    Contraseña</label>
-                <input class="form__input" type="password" placeholder="Enter password" required>     
-                <div class="button__container">
-                    <button class="button__item" type="submit">Login</button>
-                
                     <div class="btn-login__check">
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Recordarme
                     </label>
-                    </div>  
-                </div>
+                    </div>            
 
                 <div class="links">                      
                     <span>Olvisdate la <a href="{% url 'auth_password' %}">contraseña?</a></span>

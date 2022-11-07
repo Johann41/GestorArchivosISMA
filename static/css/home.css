@@ -81,6 +81,7 @@ body{
     display: flex;
     justify-content: space-evenly;   
     margin-top: -2em;
+    max-height: 5%;
 }
 
 .block__navegador{      
@@ -92,7 +93,7 @@ body{
     border-radius: 3%;
     font-size: 1.7em; 
     width: 20%;
-    height: 70vh;  
+    height: 65vh;  
 } 
 
 .block__navegador > a{    
@@ -146,3 +147,4 @@ p > a:hover{
 }
 
 /* NAVEGADORES */
+

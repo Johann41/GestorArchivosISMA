@@ -3,11 +3,9 @@
 {% block content %}
 
 <body class="login_other login_signup">
+    <h1 class="header">Resgistrate</h1>
     <div class="form__container signup__container">
         <form method="post" action="">
-
-            <h1 class="form__header signup__header">Resgistrate</h1>
-
             <p class="p-signup">Complete los campors para crear una nueva cuenta</p>
 
             <label class="form__label" for="username">Nombre(s)</label>
@@ -36,8 +34,8 @@
                 <button class="button__item" type="submit">Enviar</button>
             </div>
 
-            <div class="links links--signup">  
-                <span>Regresar a <a href="{% url 'auth_login' %}">Iniciar Sesion</a>
+            <div class="links">  
+                <span>Regresar a <a href="{% url 'auth_login' %}">Inicio de Sesion</a>
                 <i class="bi bi-arrow-right"></i>
                 </span>
             </div>
