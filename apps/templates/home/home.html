@@ -4,24 +4,58 @@
 
 {% block content %}
     <body>
-        <div class="navegador">
 
-            <p class="block__navegador block__navegador--color1">
-                <img class="block__navegador__imagen" src="{% static 'images/home/logo_TJAM.png' %}" alt="">
-                <a href="{% url 'TJAM' %}">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
-            </p>
-
-            <p class="block__navegador block__navegador--color2">
-                <img class="block__navegador__imagen" src="{% static 'images/home/logo_stjem.png' %}" alt="">
-                <a href="{% url 'STEJEM' %}">PODER JUDICIAL MICHOACAN</a>
-            </p>
-
-            <p class="block__navegador block block__navegador--color3">
-                <img class="block__navegador__imagen" src="{% static 'images/home/logo_agrarios_1.png' %}" alt="">
-                <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
-            </p>
+        <scroll-container>
+            <scroll-page id="page-1">
+                <div class="navegador">
+    
+                    <p class="block__navegador block__navegador--color1">
+                        <img class="block__navegador__imagen" src="{% static 'images/home/logo_TJAM.png' %}" alt="">
+                        <a href="{% url 'TJAM' %}">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</a>
+                    </p>
+        
+                    <p class="block__navegador block__navegador--color2">
+                        <img class="block__navegador__imagen" src="{% static 'images/home/logo_stjem.png' %}" alt="">
+                        <a href="{% url 'STEJEM' %}">PODER JUDICIAL MICHOACAN</a>
+                    </p>
+        
+                    <p class="block__navegador block block__navegador--color3">
+                        <img class="block__navegador__imagen" src="{% static 'images/home/logo_agrarios_1.png' %}" alt="">
+                        <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
+                    </p>
+                    
+                </div>
+            </scroll-page>
             
+            <scroll-page id="page-2">
+                <section class="ayuda__container">
+                    <h1>Ayuda</h1>
+                    <section class="ayuda__section">
+                        <article class="ayuda__articulo">
+                            <h2 class="ayuda__titulo">Tribunal de Justicia Administrativa</h2>
+                            <p class="ayuda__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi libero dolores deleniti eos, veniam impedit beatae est id facere! At deserunt non praesentium placeat, perferendis voluptatibus maiores aliquam quisquam!</p>
+                            <a clas="ayuda__link" href="">Leer más</a>
+                        </article>
+            
+                        <article class="ayuda__articulo">
+                            <h2 class="ayuda__titulo">Poder Judicial de Michoacán</h2>
+                            <p class="ayuda__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi libero dolores deleniti eos, veniam impedit beatae est id facere! At deserunt non praesentium placeat, perferendis voluptatibus maiores aliquam quisquam!</p>
+                            <a clas="ayuda__link" href="">Leer más</a>
+                        </article>
+            
+                        <article class="ayuda__articulo">
+                            <h2 class="ayuda__titulo">Tribunales Agrarios Michacán</h2>
+                            <p class="ayuda__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eligendi libero dolores deleniti eos, veniam impedit beatae est id facere! At deserunt non praesentium placeat, perferendis voluptatibus maiores aliquam quisquam!</p>
+                            <div clas="ayuda__link">
+                                <a href="">Leer más</a>
+                            </div>
+                        </article>
+                    </section>
+                </section>
+            </scroll-page>
+        </scroll-container>
         </div>
+
     </body>
 
 {% endblock content %}
