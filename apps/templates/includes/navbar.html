@@ -1,42 +1,47 @@
 {% load static %}
-
-<header>
-    <div class="navbar">   
+    <scroll-page id="page-1">
+        <header>    
+            <div class="navbar">          
+                <div class="navbar__logo">
+                    <img class="" src="{% static 'images/logo_final-sinFondo.png' %}" alt="">
+                </div> 
         
-        <div class="navbar__logo">
-            <img class="" src="{% static 'images/logo_final-sinFondo.png' %}" alt="">
-        </div> 
+                <div class="navbar__information">
+                    <div class="menu">
+                        <ul class="navbar__list">
+                            <li class="navbar__list-texto"><a href="#page-1">
+                                Home
+                                {% comment %} <i class="bi bi-house-door-fill"></i> {% endcomment %}
+                            </a></li>
+                            <li class="navbar__list-texto"><a href="#">
+                                Configuración
+                                {% comment %} <i class="bi bi-gear"></i> {% endcomment %}
+                            </a></li>
+                            <li class="navbar__list-texto"><a href="#page-2">                       
+                                Ayuda                        
+                            </a></li>                             
 
-        <div class="navbar__information">
-            <div class="menu">
-                <ul class="navbar__list">
-                    <li class="navbar__list-texto"><a href="{% url 'home' %}">
-                        Home
-                        {% comment %} <i class="bi bi-house-door-fill"></i> {% endcomment %}
-                    </a></li>
-                    <li class="navbar__list-texto"><a href="#">
-                        Configuración
-                        {% comment %} <i class="bi bi-gear"></i> {% endcomment %}
-                    </a></li>
-                    <li class="navbar__list-texto"><a href="#page-2">                       
-                        Ayuda                        
-                    </a></li>  
-                    <li class="navbar__list-texto"><a href="#">
-                        <i class="bi bi-person-circle"></i>
-                        Perfil                        
-                    </a></li>                  
-                    <li class="navbar__list-texto"><a href="{% url 'auth_login' %}">
-                        Cerrar Sesion 
-                        <i class="bi bi-box-arrow-in-right"></i>
-                    </a></li>
-                </ul>
-            </div> 
-                <div class="navbar__search">
-                    <input class="navbar__input" type="text"
-                    placeholder="BUSQUEDA POR NUM DE EXP"
-                    >
-                    <input class="navbar__button" type="submit" value="BUSCAR">
-                </div>
-        </div>   
-    </div>
-</header>
+                                                           
+                            <li class="navbar__list-texto"><a href="#">
+                                <span>{{request.user}}</span>
+                                <i class="bi bi-person-circle"></i>                                                         
+                            </a></li> 
+                            
+
+                            <li class="navbar__list-texto"><a href="{% url 'auth_logout' %}">
+                                Cerrar Sesion 
+                                <i class="bi bi-box-arrow-in-right"></i>
+                            </a></li>
+
+                        </ul>
+                    </div> 
+                        <div class="navbar__search">
+                            <input class="navbar__input" type="text"
+                            placeholder="BUSQUEDA POR NUM DE EXP"
+                            >
+                            <input class="navbar__button" type="submit" value="BUSCAR">
+                        </div>
+                </div>   
+            </div>
+        </header>
+    </scroll-page> 

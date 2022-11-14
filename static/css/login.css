@@ -89,6 +89,12 @@ body{
     margin-bottom: 1.3em;
     text-shadow: 2px 2px 10px var(--color-font-shadow);
 }  
+
+.msg_error{
+    color: red;
+    font-weight: lighter;
+    font-size: 65%;
+}
 /* General */
 
 

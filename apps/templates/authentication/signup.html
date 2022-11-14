@@ -6,36 +6,39 @@
     <h1 class="header">Resgistrate</h1>
     <div class="form__container signup__container">
         <form method="post" action="">
+            {% csrf_token %}
             <p class="p-signup">Complete los campos para crear una nueva cuenta</p>
 
-            <label class="form__label" for="username">Nombre(s)</label>
-            <input class="form__input" type="text" placeholder="" required>
+            {{form}}
+
+            {% comment %} <label class="form__label" for="username">Nombre(s)</label>
+            <input name="nombre" class="form__input" type="text" placeholder="" required>
 
             <label class="form__label" for="lastname">Apellidos</label>
-            <input class="form__input" type="text" placeholder="" required>
+            <input name="apellido" class="form__input" type="text" placeholder="" required>
 
             <label class="form__label" for="username">Nombre de usuario</label>
-            <input class="form__input" type="text" placeholder="" required>
+            <input name="username" class="form__input" type="text" placeholder="" required>
 
             <label class="form__label" for="email">Email</label>
-            <input class="form__input" type="text" placeholder="" required>
+            <input name="email" name="nombre" class="form__input" type="text" placeholder="" required>
 
             <label class="form__label" for="cel">Celular</label>
-            <input class="form__input" type="text" placeholder="" required>
+            <input name="cel" class="form__input" type="text" placeholder="" required>
 
             <label class="form__label" for="password">Constaseña</label>
-            <input class="form__input" type="password" placeholder="" required>
+            <input name="password" class="form__input" type="password" placeholder="" required>
 
             <label class="form__label" for="password">Confirmar Contraseña</label>
-            <input class="form__input" type="password" placeholder="" required>
+            <input name="passwod_confirm" class="form__input" type="password" placeholder="" required>
 
-
+ {% endcomment %}
             <div class="button__container">
                 <button class="button__item" type="submit">Enviar</button>
             </div>
 
             <div class="links">  
-                <span>Regresar a <a href="{% url 'auth_login' %}">Inicio de Sesion</a>
+                <span>Regresar a <a href="{% url 'auth_login' %}"> Inicio de Sesion</a>
                 <i class="bi bi-arrow-right"></i>
                 </span>
             </div>
