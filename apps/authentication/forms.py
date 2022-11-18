@@ -7,8 +7,9 @@ class LoginForm(forms.Form):
         required=True,
         widget=forms.TextInput(
            attrs={               
-                "placeholder":"usuario",
-                "class":"form__input"
+                "placeholder":"Nombre de usuario",
+                "class":"form__input",
+                "autocomplete":"off"
             } 
         )
     )
@@ -17,81 +18,88 @@ class LoginForm(forms.Form):
         required=True,
         widget=forms.PasswordInput(
            attrs={              
-                "placeholder":"contaseña",
-                "class":"form__input"
+                "placeholder":"Contaseña",
+                "class":"form__input",
+                # "autocomplete":"off"
             } 
         )
     )
 
-class SignupForm(UserCreationForm):
+class SignupForm(forms.ModelForm):
 
-    name = forms.CharField(
-        label='Nombre(s)',
-        required=True,
-        widget=forms.TextInput(
-           attrs={             
-                "class":"form__input"
-            } 
-        )
-    )
+    # name = forms.CharField(
+       
+    #     required=True,
+    #     widget=forms.TextInput(
+    #        attrs={             
+    #             "class":"form__input"
+    #         } 
+    #     )
+    # )
 
-    last_name = forms.CharField(
-        label='Apellidos',
-        required=True,
-        widget=forms.TextInput(
-           attrs={              
-                "class":"form__input"
-            } 
-        )
-    )
+    # last_name = forms.CharField(
+       
+    #     required=True,
+    #     widget=forms.TextInput(
+    #        attrs={      
+    #             "placeholder":"ejemplo@gmail.com",        
+    #             "class":"form__input"
+    #         } 
+    #     )
+    # )
 
     username = forms.CharField(
-        label='Nombre de Usuario',
+        max_length=30,
         required=True,
         widget=forms.TextInput(
-           attrs={              
-                "class":"form__input"
+           attrs={        
+                # "placeholder":"usuario",      
+                "class":"form__input",
+                # "autocomplete":"off"
             } 
         )
     )
     
-    email = forms.EmailField(
-        label='Email',
-        required=True,
-        widget=forms.EmailInput(
-           attrs={     
-                "placeholder":"ejemplo@gmail.com",        
-                "class":"form__input"
-            } 
-        )
-    )
+    # mail = forms.EmailField(
 
-    cel = forms.CharField(
-        label='Celular',
-        required=False,
+    #     required=True,
+    #     widget=forms.EmailInput(
+    #        attrs={     
+    #             "placeholder":"ejemplo@gmail.com",        
+    #             "class":"form__input"
+    #         } 
+    #     )
+    # )
+
+    cel = forms.CharField(    
+        max_length=30, 
+        required=True,  
         widget=forms.TextInput(
             attrs={
-                "placeholder":"443333536235",
-                "class":"form__input"
+                # "placeholder":"443333536235",
+                "class":"form__input",
+                "type":"number"
             } 
         )
     )
 
     password1 = forms.CharField(
-        label='Contraseña',
+        max_length=30,
         required=True,
         widget=forms.PasswordInput(
            attrs={
+                # "placeholder":"Ingrese su contraseña",
                 "class":"form__input"
             } 
         )
     )
 
     password2 = forms.CharField(
-        label='Confirmar Contraseña',
+        max_length=30,
         required=True,
         widget=forms.PasswordInput(
            attrs={          
+                # "placeholder":"Confirmar contraseña anterior",
                 "class":"form__input"
             } 
         )
@@ -99,4 +107,6 @@ class SignupForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields=('name','last_name','username','email','cel','password1','password2')
+        # fields=('name','last_name','username','email','cel','password1','password2')
+        fields=('username','cel','password1','password2')
+        help_texts = {k:"" for k in fields}

@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
+from django.contrib import auth
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from .forms import LoginForm, SignupForm
+from .models import Perfil
+from django.contrib import messages
 
 # Create your views here.
 
@@ -14,8 +17,6 @@ def login_view(request):
         return redirect('home')
 
     if request.method == 'POST':
-        print('peticion')
-
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -38,16 +39,44 @@ def logout_view(request):
     return redirect('auth_login')
 
 def signup_view(request):
-    form = SignupForm(request.POST or None)
-    if request.method =='POST':
-        
-        if form.is_valid():
-            form.save()
-            return redirect('auth_login')
-        else:
-            form = SignupForm()
+    # model = Perfil 
+    msg = None
+    formulario = SignupForm(request.POST or None)
+    if request.method =='POST':     
+        if formulario.is_valid():
 
-    return  render(request, 'authentication/signup.html',{"form":form})
+            username = formulario.cleaned_data.get('username')
+            cel = formulario.cleaned_data.get('cel')
+            password = formulario.cleaned_data.get('password1') 
+            password_hash = User.check_password()
+            print(password_hash)
+
+            User.check_password
+            
+            user = User.objects.create_user(username=username, password=password)  
+            user_auth =  authenticate(username = username, password=password)
+
+            # print(user)
+            nuevo_perfil = Perfil.objects.create(usuario=username, cel=cel)
+            login(request,user_auth)         
+            formulario.save()   
+            return redirect('home') 
+
+            # # if user is not None:
+                
+            # #     new_formulario.user=user
+            # #     new_formulario.save()
+            # #     return redirect('home') 
+
+            # else:
+            #     msg = "Error al autentificar"
+
+        else:  
+            msg = "Error"                                        
+            form = SignupForm()
+        
+        
+    return  render(request, 'authentication/signup.html',{"form":formulario, "msg":msg})
 
 def password_view(request): 
 

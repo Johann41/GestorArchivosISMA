@@ -8,35 +8,28 @@
         <form method="post" action="">
             {% csrf_token %}
             <p class="p-signup">Complete los campos para crear una nueva cuenta</p>
-
-            {{form}}
-
-            {% comment %} <label class="form__label" for="username">Nombre(s)</label>
-            <input name="nombre" class="form__input" type="text" placeholder="" required>
-
-            <label class="form__label" for="lastname">Apellidos</label>
-            <input name="apellido" class="form__input" type="text" placeholder="" required>
-
-            <label class="form__label" for="username">Nombre de usuario</label>
-            <input name="username" class="form__input" type="text" placeholder="" required>
-
-            <label class="form__label" for="email">Email</label>
-            <input name="email" name="nombre" class="form__input" type="text" placeholder="" required>
-
-            <label class="form__label" for="cel">Celular</label>
-            <input name="cel" class="form__input" type="text" placeholder="" required>
-
-            <label class="form__label" for="password">Constaseña</label>
-            <input name="password" class="form__input" type="password" placeholder="" required>
-
-            <label class="form__label" for="password">Confirmar Contraseña</label>
-            <input name="passwod_confirm" class="form__input" type="password" placeholder="" required>
-
- {% endcomment %}
-            <div class="button__container">
-                <button class="button__item" type="submit">Enviar</button>
-            </div>
-
+            {% comment %} <label class="form__label" for="username">Nombres(s)</label>
+            {{form.name}}
+            <label class="form__label" for="username">Apellidos</label>
+            {{form.last_name}} {% endcomment %}
+            <label class="form__label is-required" >Nombre de usuario</label>           
+            {{form.username}}
+            {% comment %} <label class="form__label" for="username">Correo</label>
+            {{form.mail}} {% endcomment %}
+            <label class="form__label is-required" for="username">Celular</label> 
+            {{form.cel}}
+            <label class="form__label is-required" for="username">Contraseña</label>
+            {{form.password1}}
+            <label class="form__label is-required" for="username">Confimar contraseña</label>
+            {{form.password2}}
+            <div class="button__container">         
+            
+            <button class="button__item" type="submit">Registrarse</button>
+            
+            {% if msg %}
+                <span>{{msg}}</span>
+            {% endif %}
+        
             <div class="links">  
                 <span>Regresar a <a href="{% url 'auth_login' %}"> Inicio de Sesion</a>
                 <i class="bi bi-arrow-right"></i>
