@@ -37,11 +37,11 @@
 <body>
     {% include 'includes/navbar.html' %}
 
-    <main>
-        {% block content %}
+    
+    {% block content %}
         {% comment %} home.html {% endcomment %}
-        {% endblock content %}
-    </main>
+    {% endblock content %}
+   
 
     {% include 'includes/footer.html' %}
 </body>

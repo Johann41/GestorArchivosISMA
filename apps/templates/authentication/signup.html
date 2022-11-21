@@ -8,28 +8,48 @@
         <form method="post" action="">
             {% csrf_token %}
             <p class="p-signup">Complete los campos para crear una nueva cuenta</p>
-            {% comment %} <label class="form__label" for="username">Nombres(s)</label>
-            {{form.name}}
-            <label class="form__label" for="username">Apellidos</label>
-            {{form.last_name}} {% endcomment %}
+
+            <label class="form__label" >Nombre(s)</label>           
+            {{customer_form.name}}               
+
+            <label class="form__label" >Apellidos</label>           
+            {{customer_form.last_name}}
+                      
             <label class="form__label is-required" >Nombre de usuario</label>           
-            {{form.username}}
-            {% comment %} <label class="form__label" for="username">Correo</label>
-            {{form.mail}} {% endcomment %}
+            {{signup_form.username}}
+                
+            <label class="form__label">Email</label>
+            {{signup_form.email}} 
+                       
             <label class="form__label is-required" for="username">Celular</label> 
-            {{form.cel}}
+            {{customer_form.cel}}
+                       
             <label class="form__label is-required" for="username">Contraseña</label>
-            {{form.password1}}
+            {{signup_form.password1}}
+                                   
             <label class="form__label is-required" for="username">Confimar contraseña</label>
-            {{form.password2}}
-            <div class="button__container">         
-            
-            <button class="button__item" type="submit">Registrarse</button>
-            
+            {{signup_form.password2}}
+
             {% if msg %}
-                <span>{{msg}}</span>
+                    <span class="msg_error_sign">{{msg}}</span>                 
             {% endif %}
-        
+            
+            <div class="msg_error_sign">
+                <p class="form__label">{{customer_form.name.errors}}</p> 
+                <p class="form__label">{{customer_form.last_name.errors}}</p>
+                <p class="form__label">{{signup_form.username.errors}}</p>
+                <p class="form__label">{{signup_form.email.errors}} </p>
+                <p class="form__label">{{customer_form.cel.errors}}</p>
+                <p class="form__labe">{{signup_form.password1.erros}} </p>
+                <p class="form__label">{{signup_form.password2.errors}}</p>
+            </div>
+
+            
+
+            <div class="button__container">    
+                <button class="button__item" type="submit">Registrarse</button>
+            </div>
+   
             <div class="links">  
                 <span>Regresar a <a href="{% url 'auth_login' %}"> Inicio de Sesion</a>
                 <i class="bi bi-arrow-right"></i>

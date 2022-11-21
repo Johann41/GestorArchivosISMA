@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <body>
+    <main>
 
         <scroll-container>
                        
@@ -22,7 +22,12 @@
                     <p class="block__navegador block block__navegador--color3">
                         <img class="block__navegador__imagen" src="{% static 'images/home/logo_agrarios_1.png' %}" alt="">
                         <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
-                    </p>                   
+                    </p>     
+                    
+                    {% comment %} <p class="block__navegador block block__navegador--color3">
+                        <img class="block__navegador__imagen" src="{% static 'images/home/logo_agrarios_1.png' %}" alt="">
+                        <a href="{% url 'AGRARIOS' %}">TRIBUNALES AGRARIOS MICHOACAN</a>
+                    </p> {% endcomment %}
                 </div>
 
             <scroll-page id="page-2">
@@ -51,11 +56,11 @@
                     </section>
                 </section>
             </scroll-page>
-
+            
         </scroll-container>
         </div>
 
-    </body>
+    </main>
 
 {% endblock content %}
 

@@ -2,8 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import auth
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from .forms import LoginForm, SignupForm
-from .models import Perfil
+from .forms import LoginForm, CustomerForm, SignUpForm
 from django.contrib import messages
 
 # Create your views here.
@@ -39,44 +38,40 @@ def logout_view(request):
     return redirect('auth_login')
 
 def signup_view(request):
-    # model = Perfil 
+    
+    signup_form = SignUpForm(request.POST or None, prefix='signup')
+    customer_form = CustomerForm(request.POST or None, prefix='customer')
     msg = None
-    formulario = SignupForm(request.POST or None)
-    if request.method =='POST':     
-        if formulario.is_valid():
 
-            username = formulario.cleaned_data.get('username')
-            cel = formulario.cleaned_data.get('cel')
-            password = formulario.cleaned_data.get('password1') 
-            password_hash = User.check_password()
-            print(password_hash)
+    if request.method == "POST":
+        if signup_form.is_valid() and customer_form.is_valid():
 
-            User.check_password
+            user_form = signup_form.save()
+            new_customer = customer_form.save(commit=False)
             
-            user = User.objects.create_user(username=username, password=password)  
-            user_auth =  authenticate(username = username, password=password)
+            username = signup_form.cleaned_data.get('username')
+            password = signup_form.cleaned_data.get('password1')
 
-            # print(user)
-            nuevo_perfil = Perfil.objects.create(usuario=username, cel=cel)
-            login(request,user_auth)         
-            formulario.save()   
-            return redirect('home') 
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                new_customer.user = user
+                new_customer.save()
+                return redirect('home')
+            else:
+                msg = "Erro al autentificar"
 
-            # # if user is not None:
-                
-            # #     new_formulario.user=user
-            # #     new_formulario.save()
-            # #     return redirect('home') 
+        else:
+            msg = 'Error al registrar usuario: '
+    
+    context = {
+        "signup_form": signup_form,
+        "customer_form": customer_form,
+        "msg": msg,
+    }
 
-            # else:
-            #     msg = "Error al autentificar"
-
-        else:  
-            msg = "Error"                                        
-            form = SignupForm()
         
-        
-    return  render(request, 'authentication/signup.html',{"form":formulario, "msg":msg})
+    return  render(request, 'authentication/signup.html',context)
 
 def password_view(request): 
 

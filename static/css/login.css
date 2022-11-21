@@ -91,9 +91,16 @@ body{
 }  
 
 .msg_error{
-    color: red;
+    color: red;  
     font-weight: lighter;
     font-size: 65%;
+}
+
+.msg_error_sign{
+    padding: 3%;
+    color: red;
+    font-size: 85%;
+    font-weight: lighter;
 }
 
 .is-required:after {

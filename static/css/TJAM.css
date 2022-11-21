@@ -1,5 +1,48 @@
 
 
+
+  #home {
+    width: 46px;
+    height: 44px;
+    background: url(img_navsprites.gif) 0 0;
+  }
+  
+  .tjam-input, .tjam-select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #c9b0b0;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .tjam__btn-submit {
+    width: 100%;
+    background-color: #ED5454;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tjam__btn-submit:hover {
+    background-color: #ED5454 ;
+  }
+  
+ .tjam-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 2em;
+  }
+  
+  
+
+/* 
+
 .nav__button{
     display: flex; 
     padding: 10px;
@@ -18,7 +61,7 @@
     border: 1px solid black;  
     margin-top: 2em;
     font-size: 14px;
-}
+} */
 
 
 
