@@ -12,14 +12,15 @@
 
 <main class="main__TJAM">  
     <div class="tjam-container">
-      <form action="/action_page.php">
-        <img id="home" src="TJAM.png" width="1" height="1">
-        <h3>TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h3>  <br><br>
-        <label class="tjam-label" for="instancia">INSTANCIA</label>
+      <form action="">
+        <img id="home" src="{% static 'images/home/logo_TJAM.png' %}" width="1" height="1">
+        <h3>TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h3>  
+        <label class="tjam-label" for="instancia">Instancia</label>
         <select class="tjam-select" id="instancia" name="tipo">
-          <option class="tjam-select--opc" value="I1">instancia 1</option>
-          <option class="tjam-select--opc" value="I2">instancia 2</option>
-          <option class="tjam-select--opc" value="I3">instancia 3</option>
+          <option class="tjam-select--opc" value="I0">- Elige la instancia -</option>
+          <option class="tjam-select--opc" value="I1">Juzgado</option>
+          <option class="tjam-select--opc" value="I2">Salas administrativas</option>
+          <option class="tjam-select--opc" value="I3">Amparo</option>
         </select>
     
         <label class="tjam-label" for="numero">NÚMERO</label>
