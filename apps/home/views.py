@@ -13,3 +13,6 @@ def ventana_STJEM(request):
 def ventana_AGRARIO(request):
     return render(request, 'home/AGRARIO.html',{})
 
+def ventana_CJF(request):
+    return render(request, 'home/CJF.html',{})
+

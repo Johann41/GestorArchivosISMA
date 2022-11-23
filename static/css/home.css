@@ -5,6 +5,7 @@
     --color-nav-1 :#AA3056;
     --color-nav-2 :#29678A;
     --color-nav-3 :#8F2424;
+    --color-nav-4 :#b7adad;
     --color-barra-nav:#948A8D;
 }
 
@@ -107,6 +108,10 @@ body{
     width: 80%;
 }
 
+.block__navegador__imagen--img4{
+    border-radius: 0%;
+}
+
 .block__navegador--color1{
     background-color: var(--color-nav-1); 
 }
@@ -119,6 +124,9 @@ body{
     background-color: var(--color-nav-3);
 }
 
+.block__navegador--color4{
+    background-color: var(--color-nav-4);
+}
 
 p > a:link,  p >a:visited{
     color: black;

@@ -2,14 +2,106 @@
 
 {% load static %}
 
-
-
 {% block content %}
-
-<head>
+<style>
+ 
+  #home {
+    width: 46px;
+    height: 44px;
+    background: url(img_navsprites.gif) 0 0;
+  }
+  
+  .input-text[type=text], select {
+    width: 100%;
+    padding: 9px 15px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #c9b0b0;
+    border-radius: 4px;
+    box-sizing: border-box;
     
-</head>
-
+  }
+  
+  .input-submit[type=submit] {
+    width: 100%;
+    background-color: #ED5454;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .input-submit[type=submit]:hover {
+    background-color: #ED5454 ;
+  }
+  
+  .container_tjam {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  </style>
+  <!-- <header> <img src="logo.png" alt="Logo" width="100" height="100">
+    <ul>
+     <li><a class="active" href="#home">General</a></li>
+      <li><a href="#news">Perfil</a></li>
+      <li><a href="#contact">Configuración</a></li>
+      <li><a href="#about">NombreUsuario</a></li>
+      <img src="out.png" alt="Logo" width="35" height="35">
+    </ul></header> -->
+  
+  <main>
+  
+  <div class="container_tjam">
+    <form action="/action_page.php">
+     
+      <center>
+      <h2 style="color:rgb(201, 18, 18);">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h2>  
+      <div align="center"><img src="{% static 'images/logos/TJAM.png' %}" alt="Tjam" width="150" height="150"></div>
+      <label for="instancia">INSTANCIA</label>
+      <select id="instancia" name="tipo" style="width:300px;">
+        <option value="I1">Juzgado</option>
+        <option value="I2">Salas Administrativas</option>
+        <option value="I3">Salas Especializadas</option>
+        <option value="I3">Secretaría General</option>
+        <option value="I3">Amparo</option>
+      </select>
+  
+      <label for="numero">NUMERO</label>
+      <select id="numero" name="tipo"style="width:300px;">
+        <option value="N1">Primero</option>
+        <option value="N2">Segundo</option>
+        <option value="N3">Tercero</option>
+        <option value="N2">Cuarto</option>
+        <option value="N3">Quinto</option>
+        <option value="N3">Uruapan(Juzgado)</option>
+      </select>
+  <br><br><br><br><br>
+      <label for="tipo">TIPO</label>
+      <select id="numero" name="tipo"style="width:300px;">
+      <option value="N1">JA</option>
+        <option value="N2">JAR</option>
+        <option value="N3">JAL</option>
+  </select>
+      <label for="exp">EXPEDIENTE</label>
+      <input  class="input-text" type="text" id="name" name="ex" placeholder="Expediente" style="width:300px;">
+  
+      <label for="año">AÑO</label>
+      <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Año" style="width:300px;">
+  
+    <br><br><br><br>
+      <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
+      
+    </center>
+    </form>
+  </div>
+  
+  
+</main>
+{% comment %} 
 <main class="main__TJAM">  
     <div class="tjam-container">
       <form action="">
@@ -44,5 +136,5 @@
     </div>
     
     
-</main>
+</main> {% endcomment %}
 {% endblock content %}

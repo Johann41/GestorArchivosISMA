@@ -1,0 +1,304 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    #home {
+      width: 46px;
+      height: 44px;
+      background: url(img_navsprites.gif) 0 0;
+    }
+    
+    .input-text[type=text], select {
+      width: 100%;
+      padding: 9px 15px;
+      margin: 2px 0;
+      display: inline-block;
+      border: 1px solid #c9b0b0;
+      border-radius: 4px;
+      box-sizing: border-box;
+      
+    }
+    
+    .input-submit[type=submit] {
+      width: 100%;
+      background-color: #ED5454;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .input-submit[type=submit]:hover {
+      background-color: #ED5454 ;
+    }
+    
+    .container-CJF {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    </style>
+    
+    <main>
+    
+    <div class="container-CJF">
+      <form action="/action_page.php">
+       
+        <center>
+            
+        <h2 style="color:rgb(201, 18, 18);">CONSEJO DE LA JUDICATURA FEDERAL</h2>  
+        <div align="center"><img src="{% static 'images/logos/CJFF_sintexto.png' %}" alt="TA" width="200" height="150"></div>
+        <br><br><br>
+        
+       <!--<table style="width: 100%;">
+            <tr>
+                <td colspan="2" align="center">
+                    <table id="FiltroOrgano_rblTipoFiltro" class="lblTexto" border="0">
+            <tr>
+                <td><input id="FiltroOrgano_rblTipoFiltro_0" type="radio" name="FiltroOrgano$rblTipoFiltro" value="1" checked="checked" /><label for="FiltroOrgano_rblTipoFiltro_0">Por Circuito</label></td><td><input id="FiltroOrgano_rblTipoFiltro_1" type="radio" name="FiltroOrgano$rblTipoFiltro" value="2" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$1\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_1">Por Estado</label></td><td><input id="FiltroOrgano_rblTipoFiltro_2" type="radio" name="FiltroOrgano$rblTipoFiltro" value="3" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$2\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_2">Por Ciudad</label></td><td><input id="FiltroOrgano_rblTipoFiltro_3" type="radio" name="FiltroOrgano$rblTipoFiltro" value="4" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$3\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_3">Por Órgano Jurisdiccional</label></td>
+            </tr>
+        </table>    
+    -->
+        <label for="instancia">CIRCUITO</label>
+        <select id="instancia" name="tipo" style="width:300px;">
+            <option selected="selected" value="1">PRIMER CIRCUITO</option>
+            <option value="2">SEGUNDO CIRCUITO</option>
+            <option value="3">TERCER CIRCUITO</option>
+            <option value="4">CUARTO CIRCUITO</option>
+            <option value="5">QUINTO CIRCUITO</option>
+            <option value="6">SEXTO CIRCUITO</option>
+            <option value="7">S&#201;PTIMO CIRCUITO</option>
+            <option value="8">OCTAVO CIRCUITO</option>
+            <option value="9">NOVENO CIRCUITO</option>
+            <option value="10">D&#201;CIMO CIRCUITO</option>
+            <option value="41">D&#201;CIMO PRIMER CIRCUITO</option>
+            <option value="43">D&#201;CIMO SEGUNDO CIRCUITO</option>
+            <option value="46">D&#201;CIMO TERCER CIRCUITO</option>
+            <option value="38">D&#201;CIMO CUARTO CIRCUITO</option>
+            <option value="42">D&#201;CIMO QUINTO CIRCUITO</option>
+            <option value="45">D&#201;CIMO SEXTO CIRCUITO</option>
+            <option value="44">D&#201;CIMO S&#201;PTIMO CIRCUITO</option>
+            <option value="40">D&#201;CIMO OCTAVO CIRCUITO</option>
+            <option value="39">D&#201;CIMO NOVENO CIRCUITO</option>
+            <option value="20">VIG&#201;SIMO CIRCUITO</option>
+            <option value="51">VIG&#201;SIMO PRIMER CIRCUITO</option>
+            <option value="53">VIG&#201;SIMO SEGUNDO CIRCUITO</option>
+            <option value="56">VIG&#201;SIMO TERCER CIRCUITO</option>
+            <option value="48">VIG&#201;SIMO CUARTO CIRCUITO</option>
+            <option value="52">VIG&#201;SIMO QUINTO CIRCUITO</option>
+            <option value="55">VIG&#201;SIMO SEXTO CIRCUITO</option>
+            <option value="54">VIG&#201;SIMO S&#201;PTIMO CIRCUITO</option>
+            <option value="50">VIG&#201;SIMO OCTAVO CIRCUITO</option>
+            <option value="49">VIG&#201;SIMO NOVENO CIRCUITO</option>
+            <option value="30">TRIG&#201;SIMO CIRCUITO</option>
+            <option value="47">TRIG&#201;SIMO PRIMER CIRCUITO</option>
+            <option value="109">TRIG&#201;SIMO SEGUNDO CIRCUITO</option>
+        </select>
+        
+        <label for="numero">ÓRGANO JURISDICCIONAL</label>
+        <select id="numero" name="tipo" style="width:300px;">
+            <option value="10">Juzgado Primero de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="726">Juzgado Segundo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="534">Juzgado Tercero de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="41">Juzgado Cuarto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="727">Juzgado Quinto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="728">Juzgado Sexto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="64">Juzgado S&#233;ptimo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="729">Juzgado Octavo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="76">Juzgado Noveno de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="730">Juzgado D&#233;cimo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="576">Juzgado D&#233;cimo Primero de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="731">Juzgado D&#233;cimo Segundo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="732">Juzgado D&#233;cimo Tercero de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="733">Juzgado D&#233;cimo Cuarto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="734">Juzgado D&#233;cimo Quinto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="735">Juzgado D&#233;cimo Sexto de Distrito en Materia Administrativa en la Ciudad de M&#233;xico</option>
+            <option value="4012">Juzgado Decimos&#233;ptimo de Distrito en Materia Administrativa en la Ciudad de M&#233;xico </option>
+            <option value="762">Juzgado Primero de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="763">Juzgado Segundo de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="764">Juzgado Tercero de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="765">Juzgado Cuarto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="766">Juzgado Quinto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="767">Juzgado Sexto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="768">Juzgado S&#233;ptimo de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="769">Juzgado Octavo de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="770">Juzgado Noveno de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="771">Juzgado D&#233;cimo de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="772">Juzgado Decimoprimero de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="773">Juzgado Decimosegundo de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="938">Juzgado Decimotercero de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="939">Juzgado Decimocuarto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="1467">Juzgado Decimoquinto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="1468">Juzgado Decimosexto de Distrito de Amparo en Materia Penal en la Ciudad de M&#233;xico</option>
+            <option value="12">Juzgado Primero de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="23">Juzgado Segundo de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="33">Juzgado Tercero de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="43">Juzgado Cuarto de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="51">Juzgado Quinto de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="59">Juzgado Sexto de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="758">Juzgado S&#233;ptimo de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="71">Juzgado Octavo de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="77">Juzgado Noveno de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="83">Juzgado D&#233;cimo de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="87">Juzgado D&#233;cimo Primero de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="91">Juzgado D&#233;cimo Segundo de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="759">Juzgado Decimotercero de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="1424">Juzgado Decimocuarto de Distrito en Materia Civil en la Ciudad de M&#233;xico</option>
+            <option value="527">Juzgado Primero de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="535">Juzgado Segundo de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="781">Juzgado Tercero de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="652">Juzgado Cuarto de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="782">Juzgado Quinto de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="935">Juzgado Sexto de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="1425">Juzgado S&#233;ptimo de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="1426">Juzgado Octavo de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="1427">Juzgado Noveno de Distrito en Materia de Trabajo en la Ciudad de M&#233;xico</option>
+            <option value="1194">Juzgado Primero de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="1195">Juzgado Segundo de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="1196">Juzgado Tercero de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="2418">Juzgado Cuarto de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="2419">Juzgado Quinto de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="3999">Juzgado Sexto de Distrito Especializado en Ejecuci&#243;n de Penas</option>
+            <option value="555">Juzgado Primero de Distrito de Procesos Penales Federales en la Ciudad de M&#233;xico</option>
+            <option value="25">Juzgado Segundo de Distrito de Procesos Penales Federales en la Ciudad de M&#233;xico</option>
+            <option value="52">Juzgado Quinto de Distrito de Procesos Penales Federales en la Ciudad de M&#233;xico</option>
+            <option value="60">Juzgado Sexto de Distrito de Procesos Penales Federales en la Ciudad de M&#233;xico</option>
+            <option value="949">Juzgado Primero de Distrito del Centro Auxiliar de la Primera Regi&#243;n, con residencia en la Ciudad de M&#233;xico</option>
+            <option value="964">Juzgado Segundo de Distrito del Centro Auxiliar de la Primera Regi&#243;n, con residencia en la Ciudad de M&#233;xico</option>
+            <option value="4002">Juzgado Primero de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="4157">Juzgado Primero de Distrito en Materia de Concursos Mercantiles, con residencia en la Ciudad de M&#233;xico y jurisdicci&#243;n en toda la Rep&#250;blica Mexicana</option>
+            <option value="4158">Juzgado Segundo de Distrito en Materia de Concursos Mercantiles, con residencia en la Ciudad de M&#233;xico y jurisdicci&#243;n en toda la Rep&#250;blica Mexicana</option>
+            <option value="4003">Juzgado Segundo de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="4004">Juzgado Tercero de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="4005">Juzgado Cuarto de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="4006">Juzgado Quinto de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="4007">Juzgado Sexto de Distrito en Materia de Extinci&#243;n de Dominio con Competencia en la Rep&#250;blica Mexicana y Especializado en Juicios Orales Mercantiles en el Primer Circuito</option>
+            <option value="1301">Juzgado Primero de Distrito en Materia Administrativa, Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones, con residencia en la Ciudad de M&#233;xico y Jurisdicci&#243;n en toda la Rep&#250;blica</option>
+            <option value="1302">Juzgado Segundo de Distrito en Materia Administrativa, Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones, con residencia en la Ciudad de M&#233;xico y Jurisdicci&#243;n en toda la Rep&#250;blica</option>
+            <option value="4138">Juzgado Tercero de Distrito en Materia Administrativa, Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones, con residencia en la Ciudad de M&#233;xico y Jurisdicci&#243;n en toda la Rep&#250;blica</option>
+            <option value="4">Primer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="15">Segundo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="26">Tercer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="36">Cuarto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="45">Quinto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="53">Sexto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="61">S&#233;ptimo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="67">Octavo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="73">Noveno Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="79">D&#233;cimo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="84">D&#233;cimo Primer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="88">D&#233;cimo Segundo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="92">D&#233;cimo Tercer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="586">D&#233;cimo Cuarto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="708">D&#233;cimo Quinto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="792">Decimosexto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="933">Decimos&#233;ptimo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="1148">D&#233;cimo Octavo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="1442">Decimonoveno Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="1443">Vig&#233;simo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="2456">Vig&#233;simo Primer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="3894">Vig&#233;simo Segundo Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="3895">Vig&#233;simo Tercer Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="4327">Vig&#233;simo Cuarto Tribunal Colegiado en Materia Administrativa del Primer Circuito</option>
+            <option value="5">Primer Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="16">Segundo Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="27">Tercer Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="37">Cuarto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="46">Quinto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="54">Sexto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="62">S&#233;ptimo Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="68">Octavo Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="74">Noveno Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="80">D&#233;cimo Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="85">D&#233;cimo Primer Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="89">D&#233;cimo Segundo Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="93">D&#233;cimo Tercer Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="498">D&#233;cimo Cuarto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="3844">D&#233;cimo Quinto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="4011">Decimosexto Tribunal Colegiado en Materia Civil del Primer Circuito</option>
+            <option value="6">Primer Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="17">Segundo Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="28">Tercer Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="38">Cuarto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="47">Quinto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="55">Sexto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="63">S&#233;ptimo Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="69">Octavo Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="75">Noveno Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="81">D&#233;cimo Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="86">D&#233;cimo Primer Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="90">D&#233;cimo Segundo Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="495">D&#233;cimo Tercer Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="496">D&#233;cimo Cuarto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="497">D&#233;cimo Quinto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="1417">Decimosexto Tribunal Colegiado en Materia de Trabajo del Primer Circuito</option>
+            <option value="1372">Primer Tribunal Colegiado de Circuito del Centro Auxiliar de la Primera Regi&#243;n, en su car&#225;cter de ordinario</option>
+            <option value="1374">Cuarto Tribunal Colegiado de Circuito del Centro Auxiliar de la Primera Regi&#243;n, en su car&#225;cter de ordinario</option>
+            <option value="7">Primer Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="18">Segundo Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="29">Tercer Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="39">Cuarto Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="48">Quinto Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="56">Sexto Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="499">S&#233;ptimo Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="500">Octavo Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="501">Noveno Tribunal Colegiado en Materia Penal del Primer Circuito</option>
+            <option value="1671">D&#233;cimo Tribunal Colegiado en Materia Penal del Primer Circuito.</option>
+            <option value="1304">Primer Tribunal Colegiado de Circuito en Materia Administrativa, Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones, con residencia en la Ciudad de M&#233;xico y Jurisdicci&#243;n en toda la Rep&#250;blica</option>
+            <option value="1305">Segundo Tribunal Colegiado de Circuito en Materia Administrativa, Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones, con residencia en la Ciudad de M&#233;xico y Jurisdicci&#243;n en toda la Rep&#250;blica</option>
+            <option value="1504">Centro de Justicia Penal Federal en la Ciudad de M&#233;xico, Reclusorio Norte</option>
+            <option value="1505">Centro de Justicia Penal Federal en la Ciudad de M&#233;xico, Reclusorio Oriente</option>
+            <option value="1506">Centro de Justicia Penal Federal en la Ciudad de M&#233;xico, Reclusorio Sur</option>
+            <option value="4260">Primer Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="3986">Tribunal Laboral Federal de asuntos colectivos, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4261">Segundo Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4262">Tercer Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4263">Cuarto Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4264">Quinto Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4265">Sexto Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4266">S&#233;ptimo Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4267">Octavo Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4268">Noveno Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4269">D&#233;cimo Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4270">D&#233;cimo Primer Tribunal Laboral Federal de asuntos individuales, con sede en la Ciudad de M&#233;xico</option>
+            <option value="4343">Primer Tribunal Colegiado de Apelaci&#243;n en Materia Penal del Primer Circuito</option>
+            <option value="4344">Segundo Tribunal Colegiado de Apelaci&#243;n en Materia Penal del Primer Circuito</option>
+            <option value="4341">Primer Tribunal Colegiado de Apelaci&#243;n en Materias Civil, Administrativa y Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones del Primer Circuito</option>
+            <option value="4342">Segundo Tribunal Colegiado de Apelaci&#243;n en Materias Civil, Administrativa y Especializado en Competencia Econ&#243;mica, Radiodifusi&#243;n y Telecomunicaciones del Primer Circuito</option>
+        
+        </select>
+    
+        <label for="tipo">FECHA</label>
+        <input class="input-text" type="text" id="lname" name="tua" placeholder="" style="width:300px;">
+    
+    
+        <div id="expediente">
+            <td>
+                <span id="lblExpe" style="color:#24135F;">Número de Expediente</span>
+                <input class="input-text" name="txtNoExp" type="text" id="txtNoExp" style="width:300px;" />
+                <input type="hidden" name="txweNoExpAsignado_ClientState" id="txweNoExpAsignado_ClientState" />
+                
+                <span id="rev1" style="color:Red;display:none;"></span>
+                <input class="input-text" type="hidden" name="ValidatorCalloutExtender2_ClientState" id="ValidatorCalloutExtender2_ClientState" />
+                
+                <span id="lblInfo" style="color:#24135F;font-weight:bold;">Actualización: ahora puedes consultar más expedientes de forma específica separado por comas.</span>
+            </td>
+            <br><br><br><br>
+    
+            <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
+    
+      </center>
+      
+      
+      </form>
+    </div>
+    
+    
+    </main>
+{% endblock content %}
