@@ -5,6 +5,12 @@
 {% block content %}
 
 <style>
+
+    main{
+      display: flex;
+      justify-content: center;
+    }
+
     #home {
       width: 46px;
       height: 44px;
@@ -38,6 +44,7 @@
     }
     
     .container-CJF {
+      width: 95%;
       border-radius: 5px;
       background-color: #f2f2f2;
       padding: 20px;
@@ -55,16 +62,7 @@
         <h2 style="color:rgb(201, 18, 18);">CONSEJO DE LA JUDICATURA FEDERAL</h2>  
         <div align="center"><img src="{% static 'images/logos/CJFF_sintexto.png' %}" alt="TA" width="200" height="150"></div>
         <br><br><br>
-        
-       <!--<table style="width: 100%;">
-            <tr>
-                <td colspan="2" align="center">
-                    <table id="FiltroOrgano_rblTipoFiltro" class="lblTexto" border="0">
-            <tr>
-                <td><input id="FiltroOrgano_rblTipoFiltro_0" type="radio" name="FiltroOrgano$rblTipoFiltro" value="1" checked="checked" /><label for="FiltroOrgano_rblTipoFiltro_0">Por Circuito</label></td><td><input id="FiltroOrgano_rblTipoFiltro_1" type="radio" name="FiltroOrgano$rblTipoFiltro" value="2" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$1\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_1">Por Estado</label></td><td><input id="FiltroOrgano_rblTipoFiltro_2" type="radio" name="FiltroOrgano$rblTipoFiltro" value="3" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$2\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_2">Por Ciudad</label></td><td><input id="FiltroOrgano_rblTipoFiltro_3" type="radio" name="FiltroOrgano$rblTipoFiltro" value="4" onclick="javascript:setTimeout('__doPostBack(\'FiltroOrgano$rblTipoFiltro$3\',\'\')', 0)" /><label for="FiltroOrgano_rblTipoFiltro_3">Por Órgano Jurisdiccional</label></td>
-            </tr>
-        </table>    
-    -->
+
         <label for="instancia">CIRCUITO</label>
         <select id="instancia" name="tipo" style="width:300px;">
             <option selected="selected" value="1">PRIMER CIRCUITO</option>
@@ -276,9 +274,9 @@
     
         <label for="tipo">FECHA</label>
         <input class="input-text" type="text" id="lname" name="tua" placeholder="" style="width:300px;">
-    
-    
+       
         <div id="expediente">
+          
             <td>
                 <span id="lblExpe" style="color:#24135F;">Número de Expediente</span>
                 <input class="input-text" name="txtNoExp" type="text" id="txtNoExp" style="width:300px;" />
@@ -294,8 +292,7 @@
             <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
     
       </center>
-      
-      
+    
       </form>
     </div>
     

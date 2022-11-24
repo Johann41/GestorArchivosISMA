@@ -8,4 +8,7 @@ urlpatterns = [
     path('search_STEJEM/', views.ventana_STJEM, name='STEJEM'),
     path('search_AGRARIOS/', views.ventana_AGRARIO, name='AGRARIOS'),
     path('search_CJF/', views.ventana_CJF, name='CJF'),
+
+
+    path(r'^juzgado=/', views.ventana_CJF, name='ruta_juzado'),
 ]

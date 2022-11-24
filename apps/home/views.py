@@ -8,11 +8,17 @@ def ventana_TJAM(request):
     return render(request, 'home/TJAM.html',{})
 
 def ventana_STJEM(request):
+
+
+
     return render(request, 'home/STEJEM.html',{})
 
 def ventana_AGRARIO(request):
     return render(request, 'home/AGRARIO.html',{})
 
 def ventana_CJF(request):
+
+    
+
     return render(request, 'home/CJF.html',{})
 

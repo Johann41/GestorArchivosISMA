@@ -7,7 +7,12 @@
     <div class="form__container signup__container">
         <form method="post" action="">
             {% csrf_token %}
-            <p class="p-signup">Complete los campos para crear una nueva cuenta</p>
+            <p class="p-signup">
+                Complete los campos para crear una nueva cuenta               
+            </p>
+            <p  class="p-signup">
+                Los campos con un &nbsp<span style=" color: red;"> * &nbsp</span> son obligatorios
+            </p>
 
             <label class="form__label" >Nombre(s)</label>           
             {{customer_form.name}}               

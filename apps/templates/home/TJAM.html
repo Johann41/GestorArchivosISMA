@@ -4,6 +4,15 @@
 
 {% block content %}
 <style>
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo{
+    margin-bottom:2em;
+  }
  
   #home {
     width: 46px;
@@ -37,7 +46,8 @@
     background-color: #ED5454 ;
   }
   
-  .container_tjam {
+  .container_tjam {  
+    width: 95%;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -60,9 +70,10 @@
      
       <center>
       <h2 style="color:rgb(201, 18, 18);">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h2>  
-      <div align="center"><img src="{% static 'images/logos/TJAM.png' %}" alt="Tjam" width="150" height="150"></div>
+      <div class="logo" align="center"><img src="{% static 'images/logos/TJAM.png' %}" alt="Tjam" width="150" height="150"></div>
       <label for="instancia">INSTANCIA</label>
       <select id="instancia" name="tipo" style="width:300px;">
+        <option value="I0">- Elige la instancia -</option>
         <option value="I1">Juzgado</option>
         <option value="I2">Salas Administrativas</option>
         <option value="I3">Salas Especializadas</option>
@@ -79,7 +90,7 @@
         <option value="N3">Quinto</option>
         <option value="N3">Uruapan(Juzgado)</option>
       </select>
-  <br><br><br><br><br>
+  <br><br><br>
       <label for="tipo">TIPO</label>
       <select id="numero" name="tipo"style="width:300px;">
       <option value="N1">JA</option>
@@ -92,7 +103,7 @@
       <label for="año">AÑO</label>
       <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Año" style="width:300px;">
   
-    <br><br><br><br>
+    <br><br><br>
       <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
       
     </center>
