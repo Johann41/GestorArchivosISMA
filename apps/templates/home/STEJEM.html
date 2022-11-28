@@ -48,53 +48,84 @@
       background-color: #f2f2f2;
       padding: 20px;
     }
+
+    .btn{
+      margin:1em 2em 1em;
+      width: 100px;
+    }
     
     
     </style>
     
     <main>
-    
+      
     <div class="container-STEJEM">
-      <form action="/action_page.php">
-       
-        <center>
+      <center>
+
         <h2 style="color:rgb(201, 18, 18);">PODER JUDICIAL DE MICHOACAN</h2>  
         <div align="center"><img src="{% static 'images/logos/JEMM.png' %}" alt="JEM" width="150" height="150"></div>
-        
-    
-        <label for="tipo">AREA</label>
-        <input class="input-text" type="text" id="lname" name="tipo" placeholder="Juzgados" style="width:300px;">
-    
-        <label for="exp">DISTRITO</label>
-        <input class="input-text" type="text" id="name" name="ex" placeholder="Municipio" style="width:300px;">
-    <br><br>
-        <label for="año">ESPECIFICA</label>
-        <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Numero de juzgado" style="width:300px;">
-    
-        {% if Zaguayo %}       
-          <select name="" id="">
-            <option value=""></option>
-          </select>
-        {% endif %}
 
-        {% if Morelia %}       
-          <select name="" id="">
-            <option value=""></option>
-          </select>
-        {% endif %}
-        
-        <label for="año">FECHA</label>
-        <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Fecha" style="width:300px;">
-    
-        <br><br><br><br>
-        <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
-    
-      </center>
       
+        <form method="GET" action="">
+
+          {% if salas == "s" %}       
+            <button class="btn" style="background-color:#1f333e ; color:white" name="buscador" value="salas" type="submit">Sala</button>
+          {% else %}
+            <button class="btn" name="buscador" value="salas" type="submit">Sala</button> 
+          {% endif %} 
+
+          {% if juzgado == "j" %}       
+            <button class="btn" style="background-color:#1f333e; color:white" name="buscador" value="juzgado" type="submit">Juzgado</button>
+          {% else %}         
+            <button class="btn" name="buscador" value="juzgado" type="submit">Juzgado</button>  
+          {% endif %} 
+          
+        </form>
        
-      </form>
-    </div>
-    
+
+      {% if juzgado == "j" %}
+      <form method="POST" action="">
+        {% csrf_token %}
+        <br>
+         <label for="tipo">AREA</label>
+         <input class="input-text" type="text" id="lname" name="tipo" placeholder="Juzgados" style="width:300px;">
+     
+         <label for="exp">DISTRITO</label>
+         <input class="input-text" type="text" id="name" name="ex" placeholder="Municipio" style="width:300px;">
+         <br><br>
+         <label for="año">ESPECIFICA</label>
+         <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Numero de juzgado" style="width:300px;">   
+         
+         <label for="año">FECHA</label>
+         <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Fecha" style="width:300px;">
+     
+         <br><br><br>
+         <input class="input-submit" type="submit" value="Buscar" style="width:300px;">          
+       </form>
+     </div>
+     
+      {% endif %}  
+      
+      {% if salas == "s" %}
+      <form action="" method="post">
+
+        <br>
+        <label for="tipo">AREA</label>
+        <input class="input-text" type="text" id="lname" name="tipo" placeholder="Juzgados" style="width:650px;">
+        <br><br>
+        <label for="año">Toca</label>
+        <input class="input-text" type="text" id="ln" name="pref" placeholder="Prefijo" style="width:200px;">
+        <label for="año">-</label>
+        <input class="input-text" type="text" id="ln" name="num" placeholder="Numero" style="width:200px;">
+        <label for="año">/</label>
+        <input class="input-text" type="text" id="ln" name="year" placeholder="Año" style="width:200px;">
+
+        <br><br><br>
+         <input class="input-submit" type="submit" value="Buscar" style="width:300px;">    
+      </form>    
+      {% endif %}
+
+    </center>
     
     </main>
 {% endblock content %}

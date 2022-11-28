@@ -54,98 +54,47 @@
   }
   
   </style>
-  <!-- <header> <img src="logo.png" alt="Logo" width="100" height="100">
-    <ul>
-     <li><a class="active" href="#home">General</a></li>
-      <li><a href="#news">Perfil</a></li>
-      <li><a href="#contact">Configuración</a></li>
-      <li><a href="#about">NombreUsuario</a></li>
-      <img src="out.png" alt="Logo" width="35" height="35">
-    </ul></header> -->
-  
+
   <main>
-  
   <div class="container_tjam">
-    <form action="/action_page.php">
+    <form method="POST" action="">
+     {% csrf_token %}
      
       <center>
       <h2 style="color:rgb(201, 18, 18);">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h2>  
       <div class="logo" align="center"><img src="{% static 'images/logos/TJAM.png' %}" alt="Tjam" width="150" height="150"></div>
       <label for="instancia">INSTANCIA</label>
+
+
       <select id="instancia" name="tipo" style="width:300px;">
-        <option value="I0">- Elige la instancia -</option>
-        <option value="I1">Juzgado</option>
-        <option value="I2">Salas Administrativas</option>
-        <option value="I3">Salas Especializadas</option>
-        <option value="I3">Secretaría General</option>
-        <option value="I3">Amparo</option>
+        
       </select>
   
       <label for="numero">NUMERO</label>
       <select id="numero" name="tipo"style="width:300px;">
-        <option value="N1">Primero</option>
-        <option value="N2">Segundo</option>
-        <option value="N3">Tercero</option>
-        <option value="N2">Cuarto</option>
-        <option value="N3">Quinto</option>
-        <option value="N3">Uruapan(Juzgado)</option>
+        
       </select>
-  <br><br><br>
+    <br><br><br>
       <label for="tipo">TIPO</label>
-      <select id="numero" name="tipo"style="width:300px;">
-      <option value="N1">JA</option>
-        <option value="N2">JAR</option>
-        <option value="N3">JAL</option>
-  </select>
+      <select id="tipo" name="tipo"style="width:300px;">
+        
+    </select>
       <label for="exp">EXPEDIENTE</label>
-      <input  class="input-text" type="text" id="name" name="ex" placeholder="Expediente" style="width:300px;">
+      <input  class="input-text" type="text" id="numExpediente" name="ex" placeholder="Expediente" style="width:300px;">
   
       <label for="año">AÑO</label>
-      <input class="input-text" type="text" id="ln" name="aNNO" placeholder="Año" style="width:300px;">
+      <input class="input-text" type="text" id="ln" name="year" placeholder="Año" style="width:300px;">
   
     <br><br><br>
       <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
       
-    </center>
+    </center> 
     </form>
   </div>
   
+
+  <script src="{% static 'js/scripts_TJAM.js' %}"></script>
   
 </main>
-{% comment %} 
-<main class="main__TJAM">  
-    <div class="tjam-container">
-      <form action="">
-        <img id="home" src="{% static 'images/home/logo_TJAM.png' %}" width="1" height="1">
-        <h3>TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h3>  
-        <label class="tjam-label" for="instancia">Instancia</label>
-        <select class="tjam-select" id="instancia" name="tipo">
-          <option class="tjam-select--opc" value="I0">- Elige la instancia -</option>
-          <option class="tjam-select--opc" value="I1">Juzgado</option>
-          <option class="tjam-select--opc" value="I2">Salas administrativas</option>
-          <option class="tjam-select--opc" value="I3">Amparo</option>
-        </select>
-    
-        <label class="tjam-label" for="numero">NÚMERO</label>
-        <select class="tjam-select" id="numero" name="tipo">
-          <option class="tjam-select--opc" value="N1">1</option>
-          <option class="tjam-select--opc" value="N2">2</option>
-          <option class="tjam-select--opc" value="N3">3</option>
-        </select>
-    
-        <label class="tjam-label" for="tipo">TIPO</label>
-        <input class="tjam-input" type="text" id="lname" name="tipo" placeholder="Tipo">
-    
-        <label class="tjam-label" for="exp">EXPEDIENTE</label>
-        <input class="tjam-input" type="text" id="name" name="ex" placeholder="Expediente">
-    
-        <label class="tjam-label" for="año">AÑO</label>
-        <input class="tjam-input" type="text" id="ln" name="aNNO" placeholder="Año">
-         
-        <input class="tjam__btn-submit" type="submit" value="Buscar">
-      </form>
-    </div>
-    
-    
-</main> {% endcomment %}
+
 {% endblock content %}

@@ -19,6 +19,10 @@ body{
     font-size: 25px;
     font-family: 'Mukta', sans-serif;
     font-weight: bold;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login{
@@ -26,7 +30,11 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 }
 
 .login_other{
@@ -34,7 +42,10 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+    background-size: cover; 
+    min-width: 100vw;   
+    height: 90vh;
+    flex-direction: column;
 }
 
 .login_signup{
@@ -49,7 +60,7 @@ body{
     align-items: center;
     gap: 3%;
     margin: 0.8em auto;   
-    max-width: 80%;
+    width: 75%;
     height: min-content;
     padding: 3%;
     border-radius: 10px;
@@ -148,6 +159,7 @@ body{
 .form__input{  
     width: 100%; 
     height: 2.5em;
+    font-size: 16px;
     padding: 5px;
     border: none;
     background-color: transparent;
@@ -181,9 +193,9 @@ body{
     gap: 3%;
     height: max-content;
     margin: 1em auto;   
-    width: 40%;
-    height: min-content;
-    padding: 1%; 
+    min-width: 50vw;
+    height: 100%;
+    padding: 3%; 
     border-radius: 10px;
     opacity: 85%;
     background-color: var(--color-fom-container);

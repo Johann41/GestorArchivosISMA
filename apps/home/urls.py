@@ -9,6 +9,13 @@ urlpatterns = [
     path('search_AGRARIOS/', views.ventana_AGRARIO, name='AGRARIOS'),
     path('search_CJF/', views.ventana_CJF, name='CJF'),
 
+    # URL DE AJAX #
 
-    path(r'^juzgado=/', views.ventana_CJF, name='ruta_juzado'),
+    path('search_TJAM/instancias/', views.get_instancia_TJAM),
+    path('search_TJAM/numeros/<int:instancia_id>', views.get_numero_TJAM),
+    path('search_TJAM/tipos/<int:instancia_id>', views.get_tipo_TJAM),
+
+    path('search_AGRARIOS/tribunales/', views.get_tribunales_AGRERIOS)
+
+
 ]
