@@ -43,6 +43,10 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     'apps.authentication',
     'apps.home',
+    'apps.AGRARIO',
+    'apps.CJF',
+    'apps.STEJEM',
+    'apps.TJAM',
 ]
 
 THIRD_APPS = []
