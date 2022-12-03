@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import *
+from .models import TJAM_instancia, TJAM_numero, TJAM_tipo
 
 # Create your views here.
 def ventana_TJAM(request):    
