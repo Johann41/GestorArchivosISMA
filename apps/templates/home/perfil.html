@@ -1,0 +1,90 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+    <form action="" method="post">
+        {% csrf_token %}
+        <main class="perfil">
+       
+            <section class="content left">
+
+            {% for user in datos_user %}
+                <picture>
+                     <img src="/{{user.imagen}}" alt="">                  
+                </picture>            
+            {% endfor %}
+                
+            {% for user_d in django_profile %}  
+                <div class="cont-username">
+                    <label class="username" >{{user_d.username}}</label>
+                </div>   
+                
+                <div class="cont-username">
+                    {% if user_d.is_staff %}
+                        <div class="cont-username">
+                            <label class="username" >Rol: Admin</label>
+                        </div>  
+                    {% else %}
+                        <div class="cont-username">
+                            <label class="username" >Rol: Normal</label>
+                        </div>  
+                    {% endif %}
+                    
+                </div> 
+                   
+            {% endfor %}
+            <div class="cont_file">
+                <label class="form__label" >Cambiar imagen</label>
+                {{customer_form.imagen}}
+            </div>
+
+            </section>
+
+            <section class="content right">
+            
+            {% for user_d in django_profile %} 
+                <div>
+                    <label class="form__label" >Nombre de usuario : {{user_d.username}}</label>           
+                    {{signup_form.username}}
+                </div>
+                
+                <div>
+                    <label class="form__label">Email</label>        
+                    {{signup_form.email}}
+                </div>              
+            {% endfor %}
+            
+            {% for user in datos_user %}
+                <div>
+                    <label class="form__label" >Nombre(s) : {{user.name}}</label>           
+                    {{customer_form.name}}  
+                </div>
+
+                <div>
+                    <label class="form__label" >Apellidos:{{user.last_name}} </label>           
+                    {{customer_form.last_name}} 
+                </div>
+                
+                <div>
+                    <label class="form__label" for="username">Celular: {{user.cel}}</label> 
+                    {{customer_form.cel}} 
+                </div>
+                
+            {% endfor %}  
+            
+            <div class="button__container">    
+                <button class="button__item" type="submit">Editar Datos</button>
+                {% if msg %}
+                    <p>{{msg}}</p>
+                {% endif %}
+            </div>
+
+            </section>
+        
+    </main>
+
+    </form>
+{% endblock content %}

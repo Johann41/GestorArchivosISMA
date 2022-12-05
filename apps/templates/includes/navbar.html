@@ -17,12 +17,12 @@
                                 Configuración
                                 {% comment %} <i class="bi bi-gear"></i> {% endcomment %}
                             </a></li>
-                            <li class="navbar__list-texto"><a href="#page-2">                       
+                            <li class="navbar__list-texto"><a href="{% url 'home' %}#page-2">                       
                                 Ayuda                        
                             </a></li>                             
 
                                                            
-                            <li class="navbar__list-texto"><a href="#">
+                            <li class="navbar__list-texto"><a href="{% url 'perfil'%}">
                                 <span>{{request.user}}</span>
                                 <i class="bi bi-person-circle"></i>                                                         
                             </a></li> 

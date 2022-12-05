@@ -111,8 +111,21 @@ class CustomerForm(forms.ModelForm):
         )
     )
 
+    imagen=forms.CharField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+                "placeholder": "faf",
+                "class": "form__file",
+                "accept":"image/*",
+                "style":"color: transparent",
+            }
+        )
+    )
     
 
     class Meta:
         model = Customer
-        fields = ('cel', 'name', 'last_name')
+        fields = ('cel', 'name', 'last_name','imagen')
+
+

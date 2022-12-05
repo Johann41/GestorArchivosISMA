@@ -7,6 +7,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=200,null=True)
     last_name = models.CharField(max_length=200,null=True)
     cel = models.CharField(max_length=10)
+    imagen = models.ImageField(default='static/assets/user/25profile_default.png',upload_to='static/assets/user/', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.PROTECT, primary_key=True)
 
     def __str__(self):

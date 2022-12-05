@@ -3,16 +3,17 @@ from django.http import JsonResponse
 from . models import areas_Juzgado, areas_Salas, distrito_Juzgado
 
 # Create your views here.
+
 def ventana_STJEM(request):
 
     fomulario_salas = ''
     fomulario_juzgados = ''
 
-    if request.GET.get('buscador')=='salas':        
+    if request.POST.get('buscador')=='salas':        
         fomulario_salas = "s"
         print('salas')
 
-    elif request.GET.get('buscador')=='juzgado':
+    elif request.POST.get('buscador')=='juzgado':
         print('juz')
         fomulario_juzgados = "j"
 

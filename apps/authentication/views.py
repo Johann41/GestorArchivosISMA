@@ -44,6 +44,7 @@ def signup_view(request):
     msg = None
 
     if request.method == "POST":
+
         if signup_form.is_valid() and customer_form.is_valid():
 
             user_form = signup_form.save()

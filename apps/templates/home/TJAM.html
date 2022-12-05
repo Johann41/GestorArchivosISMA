@@ -51,13 +51,14 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    height: 90%;
   }
   
   </style>
 
   <main>
   <div class="container_tjam">
-    <form method="POST" action="">
+    <form method="GET" action="">
      {% csrf_token %}
      
       <center>
@@ -80,10 +81,10 @@
         
     </select>
       <label for="exp">EXPEDIENTE</label>
-      <input  class="input-text" type="text" id="numExpediente" name="ex" placeholder="Expediente" style="width:300px;">
+      <input  class="input-text" type="text" id="numExpediente" maxlength="4" name="ex" placeholder="Num exp" style="width:300px;">
   
       <label for="año">AÑO</label>
-      <input class="input-text" type="text" id="ln" name="year" placeholder="Año" style="width:300px;">
+      <input class="input-text" type="text" id="ln" name="year" maxlength="4" placeholder="YYYY" style="width:300px;">
   
     <br><br><br>
       <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
