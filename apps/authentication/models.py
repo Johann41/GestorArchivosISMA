@@ -12,3 +12,9 @@ class Customer(models.Model):
 
     def __str__(self):
         return f'{self.user}'
+
+    def delete(self, usign=None, kee_parents=False):
+
+        if self.imagen.name != 'static/assets/user/25profile_default.png':
+            self.imagen.storage.delete(self.imagen.name)
+        super().delete()
