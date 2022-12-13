@@ -23,15 +23,15 @@
             <div>
                 <label class="form__label"</label>           
                 <label class="form__label" for="username">Celular:</label> 
-                {% comment %} {{form_customer.cel}}
+                {{form_customer.cel}}
                 <label class="form__label" for="username">Nombre:</label> 
                 {{form_customer.name}}
                 <label class="form__label" for="username">Apellidos:</label> 
                 {{form_customer.last_name}}
                 <label class="form__label" for="username">Imagen:</label> 
-                {{form_customer.imagen}} {% endcomment %}
+                {{form_customer.imagen}} 
 
-                {{form_customer.as_p}}
+                {% comment %} {{form_customer.as_p}} {% endcomment %}
             </div>              
 
         <div class="button__container">    
