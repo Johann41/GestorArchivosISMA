@@ -3,89 +3,47 @@
 {% load static %}
 
 {% block content %}
-<style>
 
-    main{
-      display: flex;
-      justify-content: center;
-    }
-
-    #home {
-      width: 46px;
-      height: 44px;
-      background: url(img_navsprites.gif) 0 0;
-    }
-    
-    .input-text[type=text], select {
-      width: 100%;
-      padding: 9px 15px;
-      margin: 2px 0;
-      display: inline-block;
-      border: 1px solid #c9b0b0;
-      border-radius: 4px;
-      box-sizing: border-box;
-      
-    }
-    
-    .input-submit[type=submit] {
-      width: 100%;
-      background-color: #ED5454;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .input-submit[type=submit]:hover {
-      background-color: #ED5454 ;
-    }
-    
-    .container-AGRARIO{
-      width: 95%;
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    
-    </style>
+  <link rel="stylesheet" href="{% static 'css/AGRARIO.css' %}">
     
     <main>
     
-    <div class="container-AGRARIO">
-      <form action="/action_page.php">
-       {% csrf_token %}
-        <center>
-        <h2 style="color:rgb(201, 18, 18);">TRIBUNALES AGRARIOS MEXICO</h2>  
-        <div align="center"><img src="{% static 'images/logos/TA.png' %}" alt="TA" width="250" height="150"></div>
+      <div class="container-AGRARIO">
+        <form action="/action_page.php">
+         {% csrf_token %}
+          <center>
+            <div class="form-header">
+          <h2 class="form-header__titulo" style="color:rgb(201, 18, 18);" >TRIBUNALES AGRARIOS MEXICO</h2>  </div><br><br>
+          <div align="center"><img src="{% static 'images/logos/TA.png' %}" alt="TA" width="250" height="150"></div>
         
-    <br>
-        <label for="tipo">TRIBUNAL UNITARIO AGRARIO</label>
-        <select id="tribunal" name="tipo"style="width:300px;">
-        </select>
-    <br><br><br>
-        <label for="exp">NO.JUICIO</label>
-        <input class="input-text" type="text" maxlength="4" id="name" name="noj" placeholder="" style="width:300px;">
-        <label for="">/</label>      
-        <input class="input-text" type="text" maxlength="4" id="ln" name="aj" placeholder="" style="width:300px;">
-        <label for="año">AÑO JUICIO</label>
-    <br><br><br>
-        
-        <label for="año">FECHA DE BUSQUEDA INICIAL</label>
-        <input class="input-text" type="date" id="ln" name="fechaI" placeholder="" style="width:300px;">
-    <br><br>
-        <label for="año">FECHA DE BUSQUEDA FINAL</label>
-        <input class="input-text" type="date" id="ln" name="fechaF" placeholder="" style="width:300px;">
-    <br><br><br><br>
-        <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
-      </center>
+      <br>
       
+          <label class="letr" for="tipo" >TRIBUNAL UNITARIO AGRARIO</label>
+          <select id="tribunal" name="tipo"style="width:40%;">
+          </select>
+      <br><br><br>
+          <label class="letr" for="exp">NO.JUICIO</label>
+          <input class="input-text" type="text" maxlength="4" id="name" name="noj" placeholder="" style="width:20%; ">
+          <label class="letr" for="">/</label>      
+          <input class="input-text" type="text" maxlength="4" id="ln" name="aj" placeholder="" style="width:20%;">
+          <label class="letr" for="año">AÑO JUICIO</label>
+      <br><br><br>
+          
+          <label class="letr" for="año">FECHA DE BUSQUEDA INICIAL</label>
+          <input class="input-text" type="date" id="ln" name="fechaI" placeholder="" style="width:35%;">
+      <br><br>
+          <label class="letr" for="año">FECHA DE BUSQUEDA FINAL</label>
+          <input class="input-text" type="date" id="ln" name="fechaF" placeholder="" style="width:35%;">
+      <br><br><br><br>
+          <input class="input-submit" type="submit" value="Buscar" style="width:30%;">
+        </center>
         
-      </form>
-    </div>
-    
-    <script src="{% static 'js/scripts_AGRARIOS.js' %}"></script>
+          
+        </form>
+      </div>
+      
+      <script src="{% static 'js/scripts_AGRARIOS.js' %}"></script>
+      
     
     </main>
 {% endblock content %}

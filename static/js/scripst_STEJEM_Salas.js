@@ -8,7 +8,7 @@ const listar_salas = async () =>{
         if(data.msg==="Success"){
             let opciones=''
             data.areas.forEach(area => {
-                opciones+=`<option style="font-size:16px;" value='${area.id}'>${area.nombre}</option>`
+                opciones+=`<option " value='${area.id}'>${area.nombre}</option>`
             });
             area.innerHTML=opciones
         }else{

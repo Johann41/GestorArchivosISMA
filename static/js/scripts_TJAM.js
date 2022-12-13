@@ -7,7 +7,7 @@ const listarTipos=async(idInstancia)=>{
             tipo.removeAttribute('disabled')
             let opciones=''
             data.tipos.forEach(tipo => {
-                opciones+=`<option font-size:16px; value='${tipo.id}'>${tipo.tipo}</option>`          
+                opciones+=`<option  value='${tipo.id}'>${tipo.tipo}</option>`          
             });
             tipo.innerHTML=opciones       
         }else{
@@ -27,7 +27,7 @@ const listarNumeros=async(idInstancia)=>{
             numero.removeAttribute('disabled')
             let opciones=''
             data.numeros.forEach(numero => {
-                opciones+=`<option  font-size:16px; value='${numero.id}' >${numero.numero}</option>`          
+                opciones+=`<option   value='${numero.id}' >${numero.numero}</option>`          
             });
             numero.innerHTML=opciones       
         }else{

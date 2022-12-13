@@ -3,61 +3,7 @@
 {% load static %}
 
 {% block content %}
-<style>
-
-    main{
-      display: flex;
-      justify-content: center;
-    }
-
-    #home {
-      width: 46px;
-      height: 44px;
-      background: url(img_navsprites.gif) 0 0;
-    }
-    
-    .input-text[type=text], select {
-      width: 100%;
-      padding: 9px 15px;
-      margin: 2px 0;
-      display: inline-block;
-      border: 1px solid #c9b0b0;
-      border-radius: 4px;
-      box-sizing: border-box;
-      
-    }
-    
-    .input-submit[type=submit] {
-      width: 100%;
-      background-color: #ED5454;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .input-submit[type=submit]:hover {
-      background-color: #ED5454 ;
-    }
-    
-    .container-STEJEM {   
-      width: 95%;
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-      height: fit-content;
-    }
-
-    .btn{
-      margin:1em 2em 1em;
-      width: 100px;
-    }
-    
-    
-    </style>
-    
+  <link rel="stylesheet" href="{% static 'css/STEJEM.css' %}">
     <main>
       
     <div class="container-STEJEM">
