@@ -56,9 +56,7 @@ class editPerfilUserForm(forms.ModelForm):
         model= User
         fields = ('username','email','password1','password2')
 
-class editPerfilCustomerForm(forms.ModelForm):
-
-
+class editPerfilCustomerForm(forms.Form):
     name = forms.CharField(
         # label='Name',
         required=False,
@@ -94,19 +92,5 @@ class editPerfilCustomerForm(forms.ModelForm):
             }
         )
     )
+    imagen=forms.ImageField()
 
-    imagen=forms.CharField(
-        required=False,
-        widget=forms.FileInput(
-            attrs={
-                "placeholder": "faf",
-                "class": "form__file",
-                "accept":"image/*",
-                # "style":"color: transparent",
-                "name":"imagen"
-            }
-        )
-    )
-    class Meta:
-        model = Customer
-        fields = ('cel', 'name', 'last_name','imagen')
