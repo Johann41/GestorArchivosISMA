@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <main class="perfil">
+   
+        <section class="content left">
+                
+        <div>
+            <label class="form__label"</label>           
+                {% comment %} {{form_django.as_p}} {% endcomment %}
+        </div> 
+        
+
+        </section>
+
+        <section class="content right">
+            <div>
+                <label class="form__label"</label>           
+                <label class="form__label" for="username">Celular:</label> 
+                {% comment %} {{form_customer.cel}}
+                <label class="form__label" for="username">Nombre:</label> 
+                {{form_customer.name}}
+                <label class="form__label" for="username">Apellidos:</label> 
+                {{form_customer.last_name}}
+                <label class="form__label" for="username">Imagen:</label> 
+                {{form_customer.imagen}} {% endcomment %}
+
+                {{form_customer.as_p}}
+            </div>              
+
+        <div class="button__container">    
+            <button type="submit" class="button__item" >Editar Datos</button>
+
+            {% if msg %}
+                <p>{{msg}}</p>
+            {% endif %}
+        </div>
+
+        </section>
+    
+</main>
+
+</form>
+
+{% endblock content %}

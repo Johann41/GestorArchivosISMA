@@ -3,96 +3,50 @@
 {% load static %}
 
 {% block content %}
-
-<style>
-
-    main{
-      display: flex;
-      justify-content: center;
-    }
-
-    #home {
-      width: 46px;
-      height: 44px;
-      background: url(img_navsprites.gif) 0 0;
-    }
-    
-    .input-text[type=text], select {
-      width: 100%;
-      padding: 9px 15px;
-      margin: 2px 0;
-      display: inline-block;
-      border: 1px solid #c9b0b0;
-      border-radius: 4px;
-      box-sizing: border-box;
-      
-    }
-    
-    .input-submit[type=submit] {
-      width: 100%;
-      background-color: #ED5454;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .input-submit[type=submit]:hover {
-      background-color: #ED5454 ;
-    }
-    
-    .container-CJF {
-      width: 95%;
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    
-    </style>
-    
+    <link rel="stylesheet" href="{% static 'css/CJF.css' %}">
     <main>
     
     <div class="container-CJF">
       <form action="/action_page.php">
        
         <center>
-            
-        <h2 style="color:rgb(201, 18, 18);">CONSEJO DE LA JUDICATURA FEDERAL</h2>  
-        <div align="center"><img src="{% static 'images/logos/CJFF_sintexto.png' %}" alt="TA" width="200" height="150"></div>
-        <br><br><br>
+        <div class="contenedor_cjf">  
 
-        <label for="instancia">CIRCUITO</label>
-        <select id="circuito" name="tipo" style="width:300px;">
-            
-        </select>
-        
-        <label for="numero">ÓRGANO JURISDICCIONAL</label>
-        <select id="organo" name="tipo" style="width:300px;">           
-        </select>
-    
-        <label for="tipo">FECHA</label>
-        <input class="input-text" type="text" id="lname" name="tua" placeholder="" style="width:300px;">
-       
-        <div id="expediente">
+          <h2 style="color:rgb(201, 18, 18);">CONSEJO DE LA JUDICATURA FEDERAL</h2>  
+          <div align="center"><img src="{% static 'images/logos/CJFF_sintexto.png' %}" alt="TA" width="200" height="150"></div>
+          <br><br><br>
+  
+          <label for="instancia">CIRCUITO</label>
+          <select id="circuito" name="tipo" style="width:300px;">
+              
+          </select>
           
-            <td>
-                <span id="lblExpe" style="color:#24135F;">Número de Expediente</span>
-                <input class="input-text" name="txtNoExp" type="text" id="txtNoExp" style="width:300px;" />
-                <input type="hidden" name="txweNoExpAsignado_ClientState" id="txweNoExpAsignado_ClientState" />
-                
-                <span id="rev1" style="color:Red;display:none;"></span>
-                <input class="input-text" type="hidden" name="ValidatorCalloutExtender2_ClientState" id="ValidatorCalloutExtender2_ClientState" />
-                
-                <span id="lblInfo" style="color:#24135F;font-weight:bold;">Actualización: ahora puedes consultar más expedientes de forma específica separado por comas.</span>
-            </td>
-            <br><br><br><br>
-    
-            <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
-    
-      </center>
-    
+          <label for="numero">ÓRGANO JURISDICCIONAL</label>
+          <select id="organo" name="tipo" style="width:300px;">           
+          </select>
+      
+          <label for="tipo">FECHA</label>
+          <input class="input-text" type="text" id="lname" name="tua" placeholder="" style="width:300px;">
+         
+          <div id="expediente">
+            
+              <td>
+                  <span id="lblExpe" style="color:#24135F;">Número de Expediente</span>
+                  <input class="input-text" name="txtNoExp" type="text" id="txtNoExp" style="width:300px;" />
+                  <input type="hidden" name="txweNoExpAsignado_ClientState" id="txweNoExpAsignado_ClientState" />
+                  
+                  <span id="rev1" style="color:Red;display:none;"></span>
+                  <input class="input-text" type="hidden" name="ValidatorCalloutExtender2_ClientState" id="ValidatorCalloutExtender2_ClientState" />
+                  
+                  <span id="lblInfo" style="color:#24135F;font-weight:bold;">Actualización: ahora puedes consultar más expedientes de forma específica separado por comas.</span>
+              </td>
+              <br><br><br><br>
+      
+              <input class="input-submit" type="submit" value="Buscar" style="width:300%;">
+
+        </div>
+        </center>
+       
       </form>
     </div>
     

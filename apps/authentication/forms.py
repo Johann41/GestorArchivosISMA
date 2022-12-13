@@ -34,7 +34,8 @@ class SignUpForm(UserCreationForm):
         widget=forms.TextInput(
            attrs={
                 "placeholder":"Usuario",
-                "class":"form__input"
+                "class":"form__input",
+                "value":"",
             } 
         )
     )

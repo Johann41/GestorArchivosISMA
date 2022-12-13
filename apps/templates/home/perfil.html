@@ -76,7 +76,7 @@
             {% endfor %}  
             
             <div class="button__container">    
-                <button class="button__item" type="submit">Editar Datos</button>
+                <a class="button__item" href="{% url 'editarperfil' user.id %}">Editar Datos</a>
                 {% if msg %}
                     <p>{{msg}}</p>
                 {% endif %}

@@ -10,7 +10,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.TextInput(
            attrs={
                 "placeholder":"Usuario",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"username"
             } 
         )
     )
@@ -21,7 +22,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.EmailInput(
             attrs={
                 "placeholder":"Email",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"email"
             } 
         )
     )
@@ -32,7 +34,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.PasswordInput(
            attrs={
                 "placeholder":"Contraseña",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"password1"
             } 
         )
     )
@@ -43,7 +46,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.PasswordInput(
            attrs={
                 "placeholder":"Contraseña",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"password2"
             } 
         )
     )
@@ -62,6 +66,7 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Nombre",
                 "class":"form__input",
+                "name":"name"
             }
         )
     )
@@ -73,6 +78,7 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Apellidos",
                 "class":"form__input",
+                "name":"las_name"
             }
         )
     )
@@ -84,6 +90,7 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Cel",
                 "class": "form__input",
+                "name":"cel"
             }
         )
     )
@@ -95,7 +102,8 @@ class editPerfilCustomerForm(forms.ModelForm):
                 "placeholder": "faf",
                 "class": "form__file",
                 "accept":"image/*",
-                "style":"color: transparent",
+                # "style":"color: transparent",
+                "name":"imagen"
             }
         )
     )
