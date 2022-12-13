@@ -10,7 +10,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.TextInput(
            attrs={
                 "placeholder":"Usuario",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"username"
             } 
         )
     )
@@ -21,7 +22,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.EmailInput(
             attrs={
                 "placeholder":"Email",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"email"
             } 
         )
     )
@@ -32,7 +34,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.PasswordInput(
            attrs={
                 "placeholder":"Contraseña",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"password1"
             } 
         )
     )
@@ -43,7 +46,8 @@ class editPerfilUserForm(forms.ModelForm):
         widget=forms.PasswordInput(
            attrs={
                 "placeholder":"Contraseña",
-                "class":"form__input"
+                "class":"form__input",
+                "name":"password2"
             } 
         )
     )
@@ -52,9 +56,7 @@ class editPerfilUserForm(forms.ModelForm):
         model= User
         fields = ('username','email','password1','password2')
 
-class editPerfilCustomerForm(forms.ModelForm):
-
-
+class editPerfilCustomerForm(forms.Form):
     name = forms.CharField(
         # label='Name',
         required=False,
@@ -62,6 +64,7 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Nombre",
                 "class":"form__input",
+                "name":"name"
             }
         )
     )
@@ -73,6 +76,7 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Apellidos",
                 "class":"form__input",
+                "name":"las_name"
             }
         )
     )
@@ -84,21 +88,9 @@ class editPerfilCustomerForm(forms.ModelForm):
             attrs={
                 "placeholder": "Cel",
                 "class": "form__input",
+                "name":"cel"
             }
         )
     )
+    imagen=forms.ImageField()
 
-    imagen=forms.CharField(
-        required=False,
-        widget=forms.FileInput(
-            attrs={
-                "placeholder": "faf",
-                "class": "form__file",
-                "accept":"image/*",
-                "style":"color: transparent",
-            }
-        )
-    )
-    class Meta:
-        model = Customer
-        fields = ('cel', 'name', 'last_name','imagen')
