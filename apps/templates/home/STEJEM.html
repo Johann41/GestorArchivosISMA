@@ -4,12 +4,12 @@
 
 {% block content %}
   <link rel="stylesheet" href="{% static 'css/STEJEM.css' %}">
-    <main>
+  <main>
       
     <div class="container-STEJEM">
       <center>
-
-        <h2 style="color:rgb(201, 18, 18);">PODER JUDICIAL DE MICHOACAN</h2>  
+        <div class="form-header"> 
+        <h2 class="form-header__titulo" style="color:rgb(201, 18, 18);">PODER JUDICIAL DE MICHOACAN</h2>  </div>
         <div align="center"><img src="{% static 'images/logos/JEMM.png' %}" alt="JEM" width="150" height="150"></div>
 
       
@@ -34,21 +34,21 @@
       <form method="POST" action="">
         {% csrf_token %}
         <br>
-         <label for="tipo">Área</label>
-         <select class="input-text" type="text" id="distrito" name="tipo" placeholder="Juzgados" style="width:300px;"></select>
+         <label class="letr" for="tipo">Área</label>
+         <select class="letr" class="input-text" type="text" id="distrito" name="tipo" placeholder="Juzgados" style="width:30%;"></select>
 
-         <label for="exp">Distrito:</label>
-         <select class="input-text" type="text" id="areaJuzgados" name="ex" placeholder="Municipio" style="width:300px;"></select>
+         <label class="letr" for="exp">Distrito:</label>
+         <select class="letr" class="input-text" type="text" id="areaJuzgados" name="ex" placeholder="Municipio" style="width:30%;"></select>
          <br><br>
-         <label for="año">Expediente:</label>
-         <input class="input-text" type="text" id="ln" maxlength="4" name="p" placeholder="P." style="width:80px;">           
+         <label class="letr" for="año">Expediente:</label>
+         <input class="letr" class="input-text" type="text" id="ln" maxlength="4" name="p" placeholder="P." style="width:30%;">           
          <label for="año">&nbsp-&nbsp</label>
-         <input class="input-text" type="text" id="ln" maxlength="4" name="num" placeholder="Número" style="width:200px;">
+         <input class="letr" class="input-text" type="text" id="ln" maxlength="4" name="num" placeholder="Número" style="width:30%;">
          <label for="año">&nbsp/&nbsp</label>
-         <input class="input-text" type="text" id="ln" maxlength="10" name="year" placeholder="Año" style="width:200px;">
+         <input class="letr" class="input-text" type="text" id="ln" maxlength="10" name="year" placeholder="Año" style="width:30%;">
      
          <br><br><br>
-         <input class="input-submit" type="submit" value="Buscar" style="width:300px;">          
+         <input class="input-submit" type="submit" value="Buscar" style="width:50%;">          
        </form>
      </div>
       <script src="{% static 'js/scripts_STEJEM_Juzgados.js' %}"></script>  
@@ -58,18 +58,18 @@
       <form action="" method="post">
 
         <br>     
-        <label for="tipo">Área:</label>
-        <select class="input-text" type="text" id="area" name="tipo" placeholder="Juzgados" style="width:450px; overflow:hidden"> </select>
+        <label class="letr" for="tipo">Área:</label>
+        <select class="letr" class="input-text" type="text" id="area" name="tipo" placeholder="Juzgados" style="width:70%; overflow:hidden"> </select>
         <br><br>
-        <label for="año">Toca:</label>
-        <input class="input-text" type="text" id="ln" maxlength="4" name="pref" placeholder="Prefijo" style="width:200px;">
+        <label class="letr" for="año">Toca:</label>
+        <input class="letr" class="input-text" type="text" id="ln" maxlength="4" name="pref" placeholder="Prefijo" style="width:20%;">
         <label for="año">&nbsp-&nbsp</label>
-        <input class="input-text" type="text" id="ln" maxlength="4" name="num" placeholder="Número" style="width:200px;">
+        <input class="letr" class="input-text" type="text" id="ln" maxlength="4" name="num" placeholder="Número" style="width:20%;">
         <label for="año">&nbsp/&nbsp</label>
-        <input class="input-text" type="text" id="ln" maxlength="10" name="year" placeholder="Año" style="width:200px;">
+        <input class="letr" class="input-text" type="text" id="ln" maxlength="10" name="year" placeholder="Año" style="width:20%;">
 
         <br><br><br>
-         <input class="input-submit" type="submit" value="Buscar" style="width:300px;">    
+         <input class="input-submit" type="submit" value="Buscar" style="width:50%;">    
       </form>  
       <script src="{% static 'js/scripst_STEJEM_Salas.js' %}"></script>  
       {% endif %}

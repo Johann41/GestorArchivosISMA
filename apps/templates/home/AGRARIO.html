@@ -6,44 +6,46 @@
 
   <link rel="stylesheet" href="{% static 'css/AGRARIO.css' %}">
     
-    <main>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initual-scale=1.0,minumun-scale=1.0">
     
-      <div class="container-AGRARIO">
-        <form action="/action_page.php">
-         {% csrf_token %}
-          <center>
-            <div class="form-header">
-          <h2 class="form-header__titulo" style="color:rgb(201, 18, 18);" >TRIBUNALES AGRARIOS MEXICO</h2>  </div><br><br>
-          <div align="center"><img src="{% static 'images/logos/TA.png' %}" alt="TA" width="250" height="150"></div>
-        
-      <br>
-      
-          <label class="letr" for="tipo" >TRIBUNAL UNITARIO AGRARIO</label>
-          <select id="tribunal" name="tipo"style="width:40%;">
-          </select>
-      <br><br><br>
-          <label class="letr" for="exp">NO.JUICIO</label>
-          <input class="input-text" type="text" maxlength="4" id="name" name="noj" placeholder="" style="width:20%; ">
-          <label class="letr" for="">/</label>      
-          <input class="input-text" type="text" maxlength="4" id="ln" name="aj" placeholder="" style="width:20%;">
-          <label class="letr" for="año">AÑO JUICIO</label>
-      <br><br><br>
-          
-          <label class="letr" for="año">FECHA DE BUSQUEDA INICIAL</label>
-          <input class="input-text" type="date" id="ln" name="fechaI" placeholder="" style="width:35%;">
-      <br><br>
-          <label class="letr" for="año">FECHA DE BUSQUEDA FINAL</label>
-          <input class="input-text" type="date" id="ln" name="fechaF" placeholder="" style="width:35%;">
-      <br><br><br><br>
-          <input class="input-submit" type="submit" value="Buscar" style="width:30%;">
-        </center>
-        
-          
-        </form>
-      </div>
-      
-      <script src="{% static 'js/scripts_AGRARIOS.js' %}"></script>
-      
+  <main>
+  
+  <div class="container-AGRARIO">
+    <form action="/action_page.php">
+     {% csrf_token %}
+      <center>
+        <div class="form-header">
+      <h2 class="form-header__titulo" style="color:rgb(201, 18, 18);" >TRIBUNALES AGRARIOS MEXICO</h2>  </div><br><br>
+      <div align="center"><img src="{% static 'images/logos/TA.png' %}" alt="TA" width="250" height="150"></div>
     
-    </main>
+  <br>
+  
+      <label class="letr" for="tipo" >TRIBUNAL UNITARIO AGRARIO</label>
+      <select id="tribunal" name="tipo"style="width:40%;">
+      </select>
+  <br><br><br>
+      <label class="letr" for="exp">NO.JUICIO</label>
+      <input class="input-text" type="text" maxlength="4" id="name" name="noj" placeholder="" style="width:20%; ">
+      <label class="letr" for="">/</label>      
+      <input class="input-text" type="text" maxlength="4" id="ln" name="aj" placeholder="" style="width:20%;">
+      <label class="letr" for="año">AÑO JUICIO</label>
+  <br><br><br>
+      
+      <label class="letr" for="año">FECHA DE BUSQUEDA INICIAL</label>
+      <input class="input-text" type="date" id="ln" name="fechaI" placeholder="" style="width:35%;">
+  <br><br>
+      <label class="letr" for="año">FECHA DE BUSQUEDA FINAL</label>
+      <input class="input-text" type="date" id="ln" name="fechaF" placeholder="" style="width:35%;">
+  <br><br><br><br>
+      <input class="input-submit" type="submit" value="Buscar" style="width:30%;">
+    </center>
+    
+      
+    </form>
+  </div>
+  
+  <script src="{% static 'js/scripts_AGRARIOS.js' %}"></script>
+  
+  </main>
+    
 {% endblock content %}

@@ -5,38 +5,42 @@
 {% block content %}
 
   <link rel="stylesheet" href="{% static 'css/TJAM.css' %}">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initual-scale=1.0,minumun-scale=1.0">
+
   <main>
   <div class="container_tjam">
     <form method="GET" action="">
      {% csrf_token %}
-     
+     <div class="form-header"> 
       <center>
-      <h2 style="color:rgb(201, 18, 18);">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h2>  
+      <h2 class="form-header__titulo" style="color:rgb(201, 18, 18);">TRIBUNAL DE JUSTICIA ADMINISTRATIVA</h2>  </div>
       <div class="logo" align="center"><img src="{% static 'images/logos/TJAM.png' %}" alt="Tjam" width="150" height="150"></div>
-      <label for="instancia">INSTANCIA</label>
+      <center>
+      <label class="letr" for="instancia">INSTANCIA</label>
 
 
-      <select id="instancia" name="tipo" style="width:300px;">
+      <select id="instancia" name="tipo" style="width:20%;">
         
       </select>
   
-      <label for="numero">NUMERO</label>
-      <select id="numero" name="tipo"style="width:300px;">
+      <label class="letr" for="numero">NUMERO</label>
+      <select class="letr" id="numero" name="tipo"style="width:25%;">
         
       </select>
     <br><br><br>
-      <label for="tipo">TIPO</label>
-      <select id="tipo" name="tipo"style="width:300px;">
+      <label class="letr" for="tipo">TIPO</label>
+      <select class="letr" id="tipo" name="tipo"style="width:15%;">
         
     </select>
-      <label for="exp">EXPEDIENTE</label>
-      <input  class="input-text" type="text" id="numExpediente" maxlength="4" name="ex" placeholder="Num exp" style="width:300px;">
+      <label class="letr" for="exp">EXPEDIENTE</label>
+      <input class="letr" class="input-text" type="text" id="numExpediente" maxlength="4" name="ex" placeholder="Num exp" style="width:20%;">
   
-      <label for="año">AÑO</label>
-      <input class="input-text" type="text" id="ln" name="year" maxlength="4" placeholder="YYYY" style="width:300px;">
-  
-    <br><br><br>
-      <input class="input-submit" type="submit" value="Buscar" style="width:300px;">
+      <label class="letr" for="año">AÑO</label>
+      <input class="letr" class="input-text" type="text" id="ln" name="year" maxlength="4" placeholder="YYYY" style="width:20%;">
+  </center>
+    <br>
+    <center>
+      <input class="input-submit" type="submit" value="Buscar" style="width:30%;">
       
     </center> 
     </form>
@@ -46,5 +50,4 @@
   <script src="{% static 'js/scripts_TJAM.js' %}"></script>
   
 </main>
-
 {% endblock content %}

@@ -113,6 +113,10 @@ class CustomerForm(forms.ModelForm):
     )
 
     imagen=forms.ImageField()
+
+    class Meta:
+        model= User
+        fields = '__all__'
     
     
 
